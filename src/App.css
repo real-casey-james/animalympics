@@ -179,6 +179,38 @@
   cursor: crosshair;
 }
 
+.fish {
+  width: 200px;
+  position: fixed;
+  z-index: 2;
+}
+
+.chips {
+  width: 75px;
+  position: fixed;
+}
+
+.fishContainer {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  align-items: center;
+}
+
+.hiddenInput {
+  opacity: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  position: fixed;
+  cursor: none;
+}
+
+.keys {
+  width: 400px;
+  opacity: 0.5;
+}
+
 /* everything below here is for animation of overlay */
 
 .overlayButton-CJ {

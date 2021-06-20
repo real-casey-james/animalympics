@@ -11,11 +11,9 @@ import Timer from './components/Timer'
 import Score from './components/Score'
 import Start from './components/Start'
 import FeedMe from './components/FeedMe'
+import Fish from './components/Fish'
 
 let counter = 1
-
-// TODO - background color changes everywhere
-// TODO - sound effects
 
 export default function App () {
     
@@ -32,6 +30,7 @@ export default function App () {
         //     <Shake handleClick={handleClick} />,
         //     <Overlay handleClick={handleClick} />,
         <DuplicateContainer handleWin={() => handleWin()} handleClick={() => handleClick()} />,
+        <Fish handleWin={() => handleWin()}/>,
         <Race handleClick={() => handleClick()} handleWin={() => handleWin()} />,
         <End score={finalScore} setPaused={setPaused} resetScore={resetScore} />
     ]
@@ -69,7 +68,7 @@ export default function App () {
             <Score  setWin={() => setWin()} win={win} setFinalScore={setFinalScore} reset={reset} setReset={setReset}/>
         </div>
         {component}
-
+        
         </>
     )
 }
