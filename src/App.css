@@ -1,38 +1,573 @@
-.App {
+.start {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.start h4 {
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+}
+
+.start h2 {
+  font-size: 140px;
+  font-weight: 100;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  margin: 0px;
+  cursor: pointer;
+}
+
+.toucan {
+  height: 20vh;
+  position: fixed;
+  top: 20vh;
+}
+
+.doge {
+  height: 20vh;
+  position: fixed;
+  bottom: 20vh;
+  right: 0;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.raceWrapper {
+  height: 90vh;
+  width: 100vw;
+  position: fixed;
+}
+
+.snail {
+  height: 100px;
+  position: relative;
+  top: 1vh;
+  cursor: none;
+}
+
+.finish {
+  height: 70px;
+  position: fixed;
+  bottom: 5vh;
+  right: 10vw;
+}
+
+.moleContainer {
+  height: 90vh;
+  width: 100vw;
+  position: fixed;
+}
+
+.mole {
+  width: 10%;
+  position: fixed;
+  cursor: crosshair;
+  user-select: none;
+}
+
+.monster {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 50vh;
+}
+
+.animal {
+  height: 20vh;
+  position: fixed;
+  z-index: 2;
+  cursor: none;
+}
+
+.animalContainer {
+  height: 90vh;
+  width: 100vw;
+}
+
+.duplicateContainer {
+  height: 90vh;
+  width: 100vw;
+}
+
+/* .shakeContainer {
+  height: 90vh;
+  width: 100vw;
+  background-color: hotpink;
+}
+
+.shake {
+  position: relative;
+  top: 40vh;
+  left: 40vw;
+  font-size: 50px;
+} */
+
+.end h2 {
+  font-size: 100px;
+  font-weight: 100;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  cursor: pointer;
+}
+
+.end h3 {
+  font-size: 60px;
+  font-weight: 100;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+}
+
+.end h4 {
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+}
+
+.deer {
+  position: fixed;
+  bottom: 0;
+  left: -80px;
+  height: 50vh;
+}
+
+.lion {
+  position: fixed;
+  bottom: -60px;
+  right: 0;
+  height: 50vh;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.score {
+  font-size: 50px;
+  font-family: 'Amatic SC', cursive;
+  margin-right: 10px;
+}
+
+.time {
+  font-size: 50px;
+  font-family: 'Amatic SC', cursive;
+  margin-left: 10px;
+}
+
+.title {
+  font-size: 60px;
+  font-family: 'Amatic SC', cursive;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.title {
+  position: absolute;
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.bug {
+  width: 100px;
+  position: fixed;
+  cursor: crosshair;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* everything below here is for animation of overlay */
+
+.overlayButton-CJ {
+  font-size: 40px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.overlay-CJ {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  top: 40vh;
+  left: 40vw;
+}
+.overlay-CJ::before {
+  content: url(https://www.petage.com/wp-content/uploads/2019/09/Depositphotos_74974941_xl-2015-e1569443284386-670x627.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  font-size: 64px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.overlay-CJ:hover:before {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* everything below here is for animation of shake button */
+
+.shake {
+display: inline-block;
+transform-origin: center center;
+}
+.shake:hover {
+animation-name: shake-base;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.freez {
+animation-name: shake-base;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+animation-play-state: paused;
+}
+.shake.freez.shake-hard {
+animation-name: shake-hard;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.freez.shake-slow {
+animation-name: shake-slow;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.freez.shake-little {
+animation-name: shake-little;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.freez.shake-horizontal {
+animation-name: shake-horizontal;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.freez.shake-vertical {
+animation-name: shake-vertical;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.freez.shake-rotate {
+animation-name: shake-rotate;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.freez.shake-opacity {
+animation-name: shake-opacity;
+animation-duration: 200ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.freez.shake-crazy {
+animation-name: shake-crazy;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.freez:hover {
+animation-play-state: running;
+}
+.shake.shake-hard:hover {
+animation-name: shake-hard;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-slow:hover {
+animation-name: shake-slow;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-little:hover {
+animation-name: shake-little;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-horizontal:hover {
+animation-name: shake-horizontal;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-vertical:hover {
+animation-name: shake-vertical;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-rotate:hover {
+animation-name: shake-rotate;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-opacity:hover {
+animation-name: shake-opacity;
+animation-duration: 200ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-crazy:hover {
+animation-name: shake-crazy;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant {
+animation-name: shake-base;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant.shake-hard {
+animation-name: shake-hard;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant.shake-slow {
+animation-name: shake-slow;
+animation-duration: 5s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant.shake-little {
+animation-name: shake-little;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant.shake-horizontal {
+animation-name: shake-horizontal;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant.shake-vertical {
+animation-name: shake-vertical;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant.shake-rotate {
+animation-name: shake-rotate;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant.shake-opacity {
+animation-name: shake-opacity;
+animation-duration: 200ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant.shake-crazy {
+animation-name: shake-crazy;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 0s;
+}
+.shake.shake-constant.hover-stop:hover {
+animation-play-state: paused;
+}
+.shake.shake-delay {
+animation-name: shake-base;
+animation-duration: 100ms;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-delay: 4s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes shake-hard {
+0% {
+  transform: translate(00px, 00px) rotate(0deg);
+}
+2% {
+  transform: translate(-120px, 200px) rotate(-1.5deg);
+}
+4% {
+  transform: translate(00px, -100px) rotate(0.5deg);
+}
+6% {
+  transform: translate(-20px, 140px) rotate(2.5deg);
+}
+8% {
+  transform: translate(-120px, 100px) rotate(3.5deg);
+}
+10% {
+  transform: translate(-180px, 140px) rotate(2.5deg);
+}
+12% {
+  transform: translate(60px, -80px) rotate(-2.5deg);
+}
+14% {
+  transform: translate(00px, 180px) rotate(-1.5deg);
+}
+16% {
+  transform: translate(-120px, 140px) rotate(-2.5deg);
+}
+18% {
+  transform: translate(00px, -60px) rotate(2.5deg);
+}
+20% {
+  transform: translate(-120px, -160px) rotate(-1.5deg);
+}
+22% {
+  transform: translate(140px, -20px) rotate(3.5deg);
+}
+24% {
+  transform: translate(120px, 00px) rotate(1.5deg);
+}
+26% {
+  transform: translate(-80px, 120px) rotate(-0.5deg);
+}
+28% {
+  transform: translate(-80px, -160px) rotate(0.5deg);
+}
+30% {
+  transform: translate(-20px, -100px) rotate(3.5deg);
+}
+32% {
+  transform: translate(140px, 180px) rotate(2.5deg);
+}
+34% {
+  transform: translate(-140px, -20px) rotate(-1.5deg);
+}
+36% {
+  transform: translate(100px, 00px) rotate(-1.5deg);
+}
+38% {
+  transform: translate(40px, -100px) rotate(1.5deg);
+}
+40% {
+  transform: translate(140px, -140px) rotate(3.5deg);
+}
+42% {
+  transform: translate(-40px, -180px) rotate(-1.5deg);
+}
+44% {
+  transform: translate(-180px, 00px) rotate(3.5deg);
+}
+46% {
+  transform: translate(80px, 180px) rotate(0.5deg);
+}
+48% {
+  transform: translate(-40px, 200px) rotate(-2.5deg);
+}
+50% {
+  transform: translate(00px, -40px) rotate(-0.5deg);
+}
+52% {
+  transform: translate(120px, -80px) rotate(3.5deg);
+}
+54% {
+  transform: translate(140px, -100px) rotate(1.5deg);
+}
+56% {
+  transform: translate(-180px, -190px) rotate(1.5deg);
+}
+58% {
+  transform: translate(60px, -180px) rotate(-1.5deg);
+}
+60% {
+  transform: translate(00px, 160px) rotate(-0.5deg);
+}
+62% {
+  transform: translate(60px, 40px) rotate(2.5deg);
+}
+64% {
+  transform: translate(-140px, -100px) rotate(2.5deg);
+}
+66% {
+  transform: translate(-80px, 120px) rotate(-0.5deg);
+}
+68% {
+  transform: translate(100px, 140px) rotate(2.5deg);
+}
+70% {
+  transform: translate(-180px, -100px) rotate(-0.5deg);
+}
+72% {
+  transform: translate(160px, 140px) rotate(-0.5deg);
+}
+74% {
+  transform: translate(120px, -80px) rotate(-2.5deg);
+}
+76% {
+  transform: translate(-120px, -80px) rotate(-0.5deg);
+}
+78% {
+  transform: translate(00px, -40px) rotate(2.5deg);
+}
+80% {
+  transform: translate(120px, 20px) rotate(-2.5deg);
+}
+82% {
+  transform: translate(120px, 140px) rotate(0.5deg);
+}
+84% {
+  transform: translate(60px, 80px) rotate(2.5deg);
+}
+86% {
+  transform: translate(160px, -160px) rotate(-2.5deg);
+}
+88% {
+  transform: translate(80px, 120px) rotate(2.5deg);
+}
+90% {
+  transform: translate(00px, 200px) rotate(2.5deg);
+}
+92% {
+  transform: translate(00px, 160px) rotate(-2.5deg);
+}
+94% {
+  transform: translate(-20px, 200px) rotate(2.5deg);
+}
+96% {
+  transform: translate(160px, 00px) rotate(-2.5deg);
+}
+98% {
+  transform: translate(-120px, 120px) rotate(-0.5deg);
+}
 }
