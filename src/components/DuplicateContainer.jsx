@@ -6,10 +6,10 @@ export default function DuplicateContainer(props) {
     
     document.body.style.backgroundColor = 'darkolivegreen'
     
-    const {handleWin, handleClick} = props
+    const {handleWin, handleClick, setPaused} = props
     return (
         <div className='duplicateContainer'>
-           <Duplicate handleWin={() => handleWin()} handleClick={() => handleClick()}/> 
+           <Duplicate setPaused={setPaused} handleWin={() => handleWin()} handleClick={() => handleClick()}/> 
         </div>
     );
 }

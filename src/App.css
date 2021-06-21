@@ -43,17 +43,18 @@
 }
 
 .snail {
-  height: 100px;
+  height: 15vh;
   position: relative;
   top: 1vh;
   cursor: none;
 }
 
 .finish {
-  height: 70px;
+  height: 10vh;
   position: fixed;
   bottom: 5vh;
   right: 10vw;
+  padding: 80px;
 }
 
 .moleContainer {
@@ -63,17 +64,87 @@
 }
 
 .mole {
-  width: 10%;
+  height: 15vh;
   position: fixed;
   cursor: crosshair;
   user-select: none;
+}
+
+.ostrich {
+  height: 15vh;
+  position: fixed;
+  cursor: crosshair;
+  user-select: none;
+  /* pointer-events: none; */
+}
+
+.click {
+  width: 10vw;
+  opacity: 0.5;
+  position: fixed;
+  left: 45vw;
+  top: 40vh;
+  animation-name: click;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  pointer-events: none;
+}
+
+@keyframes click {
+  0% {left: 18vw; top: 25vh}
+  50% {left: 25vw; top: 30vh}
+  100% {left: 18vw; top: 25vh}
+}
+
+.exampleMole {
+  height: 200px;
+  opacity: 0.5;
+}
+
+.tick {
+  height: 100px;
+  margin-right: 40px;
+  opacity: 0.5;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.cross {
+  height: 100px;
+  margin-left: 40px;
+  opacity: 0.5;
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {height: 100px}
+  50% {height: 130px}
+  100% {height: 100px}
+}
+
+.exampleContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
+  margin-top: 200px;
+  width: 100%;
+}
+
+.imgContainer {
+  display: flex;
+  justify-content: center;
 }
 
 .monster {
   position: fixed;
   bottom: 0;
   right: 0;
-  height: 50vh;
+  height: 40vh;
 }
 
 .animal {
@@ -81,6 +152,23 @@
   position: fixed;
   z-index: 2;
   cursor: none;
+}
+
+.mouseIcon {
+  width: 15vw;
+  opacity: 0.5;
+  position: fixed;
+  left: 45vw;
+  top: 40vh;
+  animation-name: mouse;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mouse {
+  0% {left: 40vw; top: 35vh}
+  50% {left: 50vw; top: 45vh}
+  100% {left: 40vw; top: 35vh}
 }
 
 .animalContainer {
@@ -209,6 +297,15 @@
 .keys {
   width: 400px;
   opacity: 0.5;
+  animation-name: pulseKeys;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulseKeys {
+  0% {width: 400px}
+  50% {width: 500px}
+  100% {width: 400px}
 }
 
 /* everything below here is for animation of overlay */

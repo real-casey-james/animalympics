@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import useSound from 'use-sound'
 import bubbles from '../sounds/bubbles.wav'
+import fish from '../images/fish-svgrepo-com.svg'
+import chips from '../images/fries-svgrepo-com.svg'
+import keys from '../images/pngwing.com.png'
+
 let showControls = true
 
 export default function Fish (props) {
     document.body.style.backgroundColor = 'cornflowerblue'
-    const {handleWin} = props
+    const {handleWin, setPaused} = props
 
     let randomWidth = Math.floor(80 * Math.random()) + 10
     let randomHeight = Math.floor(80 * Math.random()) + 10
@@ -19,6 +23,7 @@ export default function Fish (props) {
 
     function keyHandler (event) {
             showControls = false
+            setPaused(false)
             checkWin()
         if (event.key === 'ArrowRight') {
             setFishDirection(1)
@@ -38,7 +43,7 @@ export default function Fish (props) {
         if (fishPositionX - chipPositionX >= -15 && fishPositionX - chipPositionX <= 15 && fishPositionY - chipPositionY >= -15 && fishPositionY - chipPositionY <= 15 ) {
             setChipPositionX(randomWidth)
             setChipPositionY(randomHeight)
-            {play()}
+            play()
             handleWin()
         }
     }
@@ -46,9 +51,9 @@ export default function Fish (props) {
     return (
         <div  onKeyDown={keyHandler} id='fishy' className='fishContainer'>
             <input className='hiddenInput' tabIndex="1" autoFocus />
-            <img className='fish' style={{left: `${fishPositionX}vw`, top: `${fishPositionY}vh`, transform: `scaleX(${fishDirection})`}} src='./images/fish-svgrepo-com.svg' />
-            <img className='chips' style={{left: `${chipPositionX}vw`, top: `${chipPositionY}vh`}} src='./images/fries-svgrepo-com.svg' />
-            {showControls && <img className='keys' src='./images/pngwing.com.png'/>}
+            <img  alt='fish' className='fish' style={{left: `${fishPositionX}vw`, top: `${fishPositionY}vh`, transform: `scaleX(${fishDirection})`}} src={fish} />
+            <img  alt='chips' className='chips' style={{left: `${chipPositionX}vw`, top: `${chipPositionY}vh`}} src={chips} />
+            {showControls && <img  alt='keys' className='keys' src={keys}/>}
         </div>
     );
 }

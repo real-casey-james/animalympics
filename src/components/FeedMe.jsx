@@ -3,57 +3,77 @@ import mouse from '../scripts/useMousePosition.js'
 import useWindowSize from '../scripts/useWindowSize'
 import useSound from 'use-sound';
 import nom from '../sounds/172134__paulmorek__nom-d-01.wav'
+import monster from '../images/halloween-monster-animal-head-with-big-open-mouth-svgrepo-com.svg'
+import cow from '../images/cow-animals-svgrepo-com.svg'
+import sheep from '../images/sheep-animals-svgrepo-com.svg'
+import swan from '../images/swan-animals-svgrepo-com.svg'
+import rabbit from '../images/rabbit-animals-svgrepo-com.svg'
+import mouseIcon from '../images/mouse-svgrepo-com.svg'
 
 let animalIndex = 0
+let showMouse = true
+let grabbed = false
 
 export default function FeedMe (props) {
     document.body.style.backgroundColor = 'white'
-    let {handleWin} = props
+    let {handleWin, setPaused} = props
     let animals = [
-        './images/cow-animals-svgrepo-com.svg',
-        './images/sheep-animals-svgrepo-com.svg',
-        './images/swan-animals-svgrepo-com.svg',
-        './images/rabbit-animals-svgrepo-com.svg'
+        sheep,
+        cow,
+        rabbit,
+        swan
     ]
 
     let [animal, setAnimal] = useState(animals[animalIndex])
 
     const { x, y } = mouse();
     const size = useWindowSize();
-    let randomWidth = Math.floor((size.width * 0.7) * Math.random()) || 200
-    let randomHeight = Math.floor((size.height - 130) * Math.random()) || 200
+    let randomWidth = Math.floor((size.width * 0.7) * Math.random()) || 150
+    let randomHeight = Math.floor((size.height - 130) * Math.random()) || 150
     const [positionX, setPositionX] = useState(randomWidth)
     const [positionY, setPositionY] = useState(randomHeight)
+    const [direction, setDirection] = useState(1)
     
     function handleDrag () {
-        setPositionX(x-100)
-        setPositionY(y-100)
+        if (grabbed === true) {
+            setPositionX(x-100)
+            setPositionY(y-100)
+            showMouse = false
+            setPaused(false)
+        }
     }
 
     useEffect(()=> {
-        if (positionX > (size.width * 0.7) && positionY > (size.height * 0.7)) {
+        if (positionX > (size.width * 0.65) && positionY > (size.height * 0.65)) {
+            grabbed = false
             onConsumption()
         }
         })
 
-        const [play] = useSound(nom)
+    const [play] = useSound(nom)
+
+    function grabbedIt () { grabbed = true }
 
     function onConsumption () {
-        {play()}
+        play()
         handleWin()
         animalIndex++
-        if (animalIndex === animals.length) {
-            animalIndex = 0
-        }
+        if (animalIndex === animals.length) { animalIndex = 0 }
         setAnimal(animals[animalIndex])
         setPositionX(randomWidth)
         setPositionY(randomHeight)
+        if (animalIndex === 1 || animalIndex === 2) {
+            setDirection(-1)
+        } else {
+            setDirection(1)
+        }
     }
     
     return (
-        <div className='animalContainer'>
-            <img draggable='false' onMouseMove={() => handleDrag()} style={{left: positionX, top: positionY}} className='animal' src={animal} />
-            <img className='monster' src='./images/halloween-monster-animal-head-with-big-open-mouth-svgrepo-com.svg' />
+        <div onMouseMove={() => handleDrag()}className='animalContainer'>
+            <img  alt='animal' draggable='false' onMouseOver={() => grabbedIt()} style={{left: positionX, top: positionY, transform: `scaleX(${direction})`}} className='animal' src={animal} />
+            <img  alt='monster' className='monster' src={monster} />
+            {showMouse && <img  alt='mouse' className='mouseIcon' src={mouseIcon}/>}
         </div>
     );
 }
