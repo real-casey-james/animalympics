@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 
 import useSound from 'use-sound'
-import whack from '../sounds/349193__natty23__whack.wav'
-import quack from '../sounds/quack.wav'
+import whack from '../sounds/wack.wav'
+
+import quack from '../sounds/ostrich.wav'
 import mole from '../images/mole-svgrepo-com.svg'
 import ostrich from '../images/ostrich-animal-svgrepo-com.svg'
 import click from '../images/click-svgrepo-com.svg'

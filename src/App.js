@@ -1,15 +1,19 @@
 import { useState } from 'react';
 import './App.css';
 
-import DuplicateContainer from './components/DuplicateContainer'
-import End from './components/End'
-import MoveAway from './components/MoveAway'
-import Race from './components/Race'
-import Timer from './components/Timer'
 import Score from './components/Score'
+import Timer from './components/Timer'
 import Start from './components/Start'
 import FeedMe from './components/FeedMe'
+import MoveAway from './components/MoveAway'
+import DuplicateContainer from './components/DuplicateContainer'
 import Fish from './components/Fish'
+import Race from './components/Race'
+import Letters from './components/Letters'
+import End from './components/End'
+
+import FoodFall from './components/FoodFall';
+
 import useSound from 'use-sound'
 import next from './sounds/342749__rhodesmas__notification-01.wav'
 
@@ -30,6 +34,7 @@ export default function App () {
     const arr = [
         <Start setPaused={setPaused} setShowTimer={setShowTimer} handleLose={handleLose} />,
         <FeedMe setPaused={setPaused} handleWin={() => handleWin()} />,
+        <Letters handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
         <MoveAway setPaused={setPaused} handleClick={() => handleWin()}  losePoint={losePoint} />,
         <DuplicateContainer setPaused={setPaused} handleWin={() => handleWin()} handleClick={() => handleClick()} />,
         <Fish setPaused={setPaused} handleWin={() => handleWin()}/>,
@@ -78,6 +83,8 @@ export default function App () {
             <Score setWin={() => setWin()} win={win} setLose={() => setLose()} lose={lose} setFinalScore={setFinalScore} reset={reset} setReset={setReset}/>
         </div>
         {component}
+        {/* <FoodFall /> */}
+      
         </>
     )
 }

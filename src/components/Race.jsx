@@ -28,7 +28,7 @@ export default function Race(props) {
         showMouse = false
         setPositionX(x-35)
         setPositionY(y-120)
-        if (lastX < x) { // snail faces right
+        if (lastX < x) {
             setDirection(1)
         } else if (lastX > x) {
             setDirection(-1)

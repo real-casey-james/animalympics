@@ -27,7 +27,6 @@ export default function Timer (props) {
     return (
         <div>
            {showTimer && <span className='time' >Time left: <strong>{timer}</strong></span>}
-           {/* <span className='time' >Time left: <strong>{timer}</strong></span> */}
         </div>
     );
 }
