@@ -13,6 +13,7 @@ import Letters from './components/Letters'
 import End from './components/End'
 
 import FoodFall from './components/FoodFall';
+import FoodFallInstr from './components/FoodFallInstr';
 
 import useSound from 'use-sound'
 import next from './sounds/342749__rhodesmas__notification-01.wav'
@@ -34,6 +35,8 @@ export default function App () {
     const arr = [
         <Start setPaused={setPaused} setShowTimer={setShowTimer} handleLose={handleLose} />,
         <FeedMe setPaused={setPaused} handleWin={() => handleWin()} />,
+        <FoodFallInstr advanceComponent={advanceComponent} />,
+        <FoodFall handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
         <Letters handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
         <MoveAway setPaused={setPaused} handleClick={() => handleWin()}  losePoint={losePoint} />,
         <DuplicateContainer setPaused={setPaused} handleWin={() => handleWin()} handleClick={() => handleClick()} />,
@@ -50,6 +53,12 @@ export default function App () {
 
     function losePoint () {
         setLose(true)
+    }
+
+    function advanceComponent () {
+        counter++
+        setComponent(arr[counter])
+        setPaused(false)
     }
 
     function handleLose () {
@@ -83,8 +92,8 @@ export default function App () {
             <Score setWin={() => setWin()} win={win} setLose={() => setLose()} lose={lose} setFinalScore={setFinalScore} reset={reset} setReset={setReset}/>
         </div>
         {component}
-        {/* <FoodFall /> */}
-      
+        {/* <FoodFall handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} /> */}
+       
         </>
     )
 }

@@ -22,7 +22,7 @@ export default function Timer (props) {
             setTimer(7)
             handleLose()
         }
-    }, [timer, paused])
+    }, [timer, paused]) //might need to remove this?
 
     return (
         <div>

@@ -314,6 +314,7 @@
   height: 90vh;
   width: 100vw;
   position: fixed;
+  cursor: none;
 }
 
 .mouseCapture {
@@ -337,7 +338,7 @@
   position: fixed;
   left: 25vw;
   bottom: 80vh;
-  padding: 0 40px;
+  padding: 50px;
   z-index: 2;
   animation-name: foodDrop;
   animation-duration: 1s;
@@ -345,15 +346,46 @@
 }
 
 @keyframes foodDrop {
-  0% {bottom: 100vh}
-  10% {bottom: 90vh}
+  0% {bottom: 120vh}
+  10% {bottom: 110vh}
+  15% {bottom: 90vh}
   20% {bottom: 85vh}
+  25% {bottom: 80vh}
   30% {bottom: 75vh}
+  35% {bottom: 72.5vh}
   40% {bottom: 70vh}
+  45% {bottom: 67.5vh}
   50% {bottom: 65vh}
+  55% {bottom: 60vh}
   60% {bottom: 55vh}
+  65% {bottom: 50vh}
   70% {bottom: 45vh}
+  75% {bottom: 37.5vh}
   80% {bottom: 30vh}
+  85% {bottom: 22.5vh}
   90% {bottom: 15vh}
-  100%  {bottom: 0vh}
+  95% {bottom: 7.5vh}
+  100%  {bottom: 0vh; visibility: hidden}
+}
+
+.exFoodContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.exampleFoodfallContainer {
+  display: flex;
+  /* flex-direction: column; */
+  align-content: center;
+  justify-content: center;
+  height: 200px;
+  margin-top: 200px;
+  width: 100%;
+}
+
+.exampleFood {
+  height: 110px;
+  opacity: 0.65;
+  margin: 10px 40px
 }

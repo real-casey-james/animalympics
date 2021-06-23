@@ -39,7 +39,7 @@ function Letters(props) {
 
     return (
         <div>
-            <input onKeyPress={(evt) => handleKeypress(evt)}className='hiddenInput' tabIndex="1" autoFocus />
+            <input onKeyPress={(evt) => handleKeypress(evt)} className='hiddenInput' tabIndex="1" autoFocus />
             <div style={{left: `${positionX}vw`, top: `${positionY}vh`}} className='letterContainer' >
                 <img className='duck' src={duck} alt="duck" /> 
                 <p className='letter'>{duckLetter}</p>  

@@ -41,6 +41,7 @@ export default function MoveAway (props) {
     const [loseSound] = useSound(quack)
     function lose () {
         showMouse = false
+        props.setPaused(false)
         loseSound()
         props.losePoint()
         setPositionX(randomWidthA)

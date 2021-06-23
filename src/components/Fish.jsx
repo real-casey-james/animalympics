@@ -24,19 +24,19 @@ export default function Fish (props) {
     function keyHandler (event) {
             showControls = false
             setPaused(false)
-            checkWin()
-        if (event.key === 'ArrowRight') {
+            if (event.key === 'ArrowRight') {
             setFishDirection(1)
             setFishPositionX(fishPositionX + 10) }
-        if (event.key === 'ArrowLeft') {
+            if (event.key === 'ArrowLeft') {
             setFishDirection(-1)
             setFishPositionX(fishPositionX - 10) }
-        if (event.key === 'ArrowUp') { setFishPositionY(fishPositionY - 10) }
-        if (event.key === 'ArrowDown') { setFishPositionY(fishPositionY + 10) }
-        if (fishPositionX > 100) { setFishPositionX(0) }
-        if (fishPositionX < 0) { setFishPositionX(100) }
-        if (fishPositionY > 100) { setFishPositionY(0) }
-        if (fishPositionY < 0) { setFishPositionY(100) }
+            if (event.key === 'ArrowUp') { setFishPositionY(fishPositionY - 10) }
+            if (event.key === 'ArrowDown') { setFishPositionY(fishPositionY + 10) }
+            if (fishPositionX > 100) { setFishPositionX(0) }
+            if (fishPositionX < 0) { setFishPositionX(100) }
+            if (fishPositionY > 100) { setFishPositionY(0) }
+            if (fishPositionY < 0) { setFishPositionY(100) }
+            checkWin()
     }
     const [play] = useSound(bubbles)
     function checkWin () {
