@@ -15,6 +15,8 @@ import End from './components/End'
 import FoodFall from './components/FoodFall';
 import FoodFallInstr from './components/FoodFallInstr';
 
+import ClickLots from './components/ClickLots'
+
 import useSound from 'use-sound'
 import next from './sounds/342749__rhodesmas__notification-01.wav'
 
@@ -39,6 +41,7 @@ export default function App () {
         <FoodFall handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
         <Letters handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
         <MoveAway setPaused={setPaused} handleClick={() => handleWin()}  losePoint={losePoint} />,
+        <ClickLots setPaused={setPaused} handleWin={() => handleWin()} />,
         <DuplicateContainer setPaused={setPaused} handleWin={() => handleWin()} handleClick={() => handleClick()} />,
         <Fish setPaused={setPaused} handleWin={() => handleWin()}/>,
         <Race setPaused={setPaused} handleClick={() => handleClick()} handleWin={() => handleWin()} />,
@@ -92,7 +95,6 @@ export default function App () {
             <Score setWin={() => setWin()} win={win} setLose={() => setLose()} lose={lose} setFinalScore={setFinalScore} reset={reset} setReset={setReset}/>
         </div>
         {component}
-        {/* <FoodFall handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} /> */}
        
         </>
     )
