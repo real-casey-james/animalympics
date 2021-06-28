@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useSound from 'use-sound'
 import bubbles from '../sounds/bubbles.wav'
 import fish from '../images/fish-svgrepo-com.svg'
 import chips from '../images/fries-svgrepo-com.svg'
 import keys from '../images/pngwing.com.png'
+import seaweed from '../images/seaweed-svgrepo-com.svg'
 
 let showControls = true
 
@@ -36,24 +37,26 @@ export default function Fish (props) {
             if (fishPositionX < 0) { setFishPositionX(100) }
             if (fishPositionY > 100) { setFishPositionY(0) }
             if (fishPositionY < 0) { setFishPositionY(100) }
-            checkWin()
     }
     const [play] = useSound(bubbles)
-    function checkWin () {
-        if (fishPositionX - chipPositionX >= -15 && fishPositionX - chipPositionX <= 15 && fishPositionY - chipPositionY >= -15 && fishPositionY - chipPositionY <= 15 ) {
+  
+    useEffect(() => {
+        if (fishPositionX - chipPositionX >= -10 && fishPositionX - chipPositionX <= 10 && fishPositionY - chipPositionY >= -10 && fishPositionY - chipPositionY <= 10 ) {
             setChipPositionX(randomWidth)
             setChipPositionY(randomHeight)
             play()
             handleWin()
         }
-    }
+    }, [fishPositionX, fishPositionY])
 
     return (
-        <div  onKeyDown={keyHandler} id='fishy' className='fishContainer'>
+        <div onKeyDown={keyHandler} id='fishy' className='fishContainer'>
             <input className='hiddenInput' tabIndex="1" autoFocus />
-            <img  alt='fish' className='fish' style={{left: `${fishPositionX}vw`, top: `${fishPositionY}vh`, transform: `scaleX(${fishDirection})`}} src={fish} />
-            <img  alt='chips' className='chips' style={{left: `${chipPositionX}vw`, top: `${chipPositionY}vh`}} src={chips} />
-            {showControls && <img  alt='keys' className='keys' src={keys}/>}
+            <img alt='fish' className='fish' style={{left: `${fishPositionX}vw`, top: `${fishPositionY}vh`, transform: `scaleX(${fishDirection})`}} src={fish} />
+            <img alt='chips' className='chips' style={{left: `${chipPositionX}vw`, top: `${chipPositionY}vh`}} src={chips} />
+            {showControls && <img alt='keys' className='keys' src={keys}/>}
+            <img className='seaweed' src={seaweed} alt="" />
+            <img className='seaweed2' src={seaweed} alt="" />
         </div>
     );
 }

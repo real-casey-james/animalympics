@@ -62,20 +62,26 @@
   height: 90vh;
   width: 100vw;
   position: fixed;
+  cursor: none;
 }
 
 .mole {
-  height: 15vh;
+  height: 150px;
   position: fixed;
-  cursor: crosshair;
   user-select: none;
 }
 
 .ostrich {
-  height: 15vh;
+  height: 150px;
   position: fixed;
-  cursor: crosshair;
   user-select: none;
+}
+
+.bat {
+  position: fixed;
+  height: 250px;
+  pointer-events: none;
+  transform-origin: 0% 100% 0;
 }
 
 .click {
@@ -401,7 +407,6 @@
 
 .finishLine {
   border-left: 15px dashed white;
-  /* border-width: 30px; */
   height: 90vh;
   width: 10vw;
   position: fixed;
@@ -430,4 +435,73 @@
   0% {left: 45vw; top: 40vh; width: 10vw}
   50% {left: 44vw; top: 39vh; width: 9vw}
   100% {left: 45vw; top: 40vh; width: 10vw}
+}
+
+.fly {
+  width: 100px;
+  position: fixed;
+  user-select: none;
+
+  motion-path: path("M18.45,58.46s52.87-70.07,101.25-.75,101.75-6.23,101.75-6.23S246.38,5.59,165.33,9.08s-15,71.57-94.51,74.56S18.45,58.46,18.45,58.46Z");
+  offset-path: path("M18.45,58.46s52.87-70.07,101.25-.75,101.75-6.23,101.75-6.23S246.38,5.59,165.33,9.08s-15,71.57-94.51,74.56S18.45,58.46,18.45,58.46Z");
+  motion-rotation: reverse;
+  animation: move 3s linear infinite;
+}
+
+.splatClass {
+  width: 100px;
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.butterflySplatClass {
+  width: 200px;
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes move {
+  100% { 
+    motion-offset: 100%;
+    offset-distance: 100%;
+  }
+}
+
+.swat {
+  height: 200px;
+  position: fixed;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  transform-origin: 0% 100% 0;
+}
+
+.swatContainer {
+  height: 90vh;
+  width: 100vw;
+  position: fixed;
+  cursor: none;
+}
+
+.seaweed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  height: 500px;
+  z-index: -1;
+}
+
+.seaweed2 {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+  height: 500px;
+  transform: scaleX(-1);
+  z-index: -1;
 }

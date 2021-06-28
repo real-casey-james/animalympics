@@ -16,6 +16,7 @@ import FoodFall from './components/FoodFall';
 import FoodFallInstr from './components/FoodFallInstr';
 
 import ClickLots from './components/ClickLots'
+import SwatFlies from './components/SwatFlies';
 
 import useSound from 'use-sound'
 import next from './sounds/342749__rhodesmas__notification-01.wav'
@@ -37,13 +38,14 @@ export default function App () {
     const arr = [
         <Start setPaused={setPaused} setShowTimer={setShowTimer} handleLose={handleLose} />,
         <FeedMe setPaused={setPaused} handleWin={() => handleWin()} />,
+        <MoveAway setPaused={setPaused} handleClick={() => handleWin()}  losePoint={losePoint} />,
         <FoodFallInstr advanceComponent={advanceComponent} />,
         <FoodFall handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
+        <SwatFlies setPaused={setPaused} handleWin={() => handleWin()} losePoint={losePoint}/>,
         <Letters handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
-        <MoveAway setPaused={setPaused} handleClick={() => handleWin()}  losePoint={losePoint} />,
         <ClickLots setPaused={setPaused} handleWin={() => handleWin()} />,
-        <DuplicateContainer setPaused={setPaused} handleWin={() => handleWin()} handleClick={() => handleClick()} />,
         <Fish setPaused={setPaused} handleWin={() => handleWin()}/>,
+        <DuplicateContainer setPaused={setPaused} handleWin={() => handleWin()} handleClick={() => handleClick()} />,
         <Race setPaused={setPaused} handleClick={() => handleClick()} handleWin={() => handleWin()} />,
         <End score={finalScore} setPaused={setPaused} resetScore={resetScore} setShowTimer={setShowTimer} />
     ]
@@ -95,7 +97,7 @@ export default function App () {
             <Score setWin={() => setWin()} win={win} setLose={() => setLose()} lose={lose} setFinalScore={setFinalScore} reset={reset} setReset={setReset}/>
         </div>
         {component}
-       
+        
         </>
     )
 }

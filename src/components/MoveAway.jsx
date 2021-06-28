@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import mouse from '../scripts/useMousePosition.js'
 
 import useSound from 'use-sound'
 import whack from '../sounds/wack.wav'
@@ -9,13 +10,14 @@ import ostrich from '../images/ostrich-animal-svgrepo-com.svg'
 import click from '../images/click-svgrepo-com.svg'
 import tick from '../images/checked-tick-svgrepo-com.svg'
 import cross from '../images/cancel-svgrepo-com.svg'
-
+import bat from '../images/bat-svgrepo-com.svg'
 
 let showMouse = true
 
 export default function MoveAway (props) {
     document.body.style.backgroundColor = '#B37C51'
 
+    const { x, y } = mouse();
     let randomWidthA = Math.floor(80 * Math.random()) + 10
     let randomHeightA = Math.floor(80 * Math.random()) + 10
     let randomWidthB = Math.floor(80 * Math.random()) + 10
@@ -24,7 +26,14 @@ export default function MoveAway (props) {
     const [positionY, setPositionY] = useState(20)
     const [animalPositionX, setAnimalPositionX] = useState(80)
     const [animalPositionY, setAnimalPositionY] = useState(20)
+    const [mouseX, setMouseX] = useState(x)
+    const [mouseY, setMouseY] = useState(y)
+    const [batSkew, setBatSkew] = useState(0)
 
+    function handleMouseMove () {
+        setMouseX(x-240)
+        setMouseY(y-50)
+    }
 
     const [play] = useSound(whack)
     function buttonMoveAway () {
@@ -49,13 +58,24 @@ export default function MoveAway (props) {
         setAnimalPositionX(randomWidthB)
         setAnimalPositionY(randomHeightB)
     }
+
+    function handleBatDown () {
+        setBatSkew(10)
+        showMouse = false
+    }
+
+    function handleBatUp () {
+        setBatSkew(0)
+    }
     
     return (
         <>
-        <div className='moleContainer'>
+        <div className='moleContainer' onMouseMove={() => handleMouseMove()} onMouseDown={() => handleBatDown()} onMouseUp={() => handleBatUp()}>
             <img alt='mole' draggable='false' src={mole} className='mole' style={{left: `${positionX}vw`, top: `${positionY}vh`}} onClick={buttonMoveAway} />
             
             <img alt='ostrich' draggable='false' src={ostrich} className='ostrich' style={{left: `${animalPositionX}vw`, top: `${animalPositionY}vh`}} onClick={lose}/>
+
+            <img className='bat' src={bat} alt="" style={{left: mouseX, top: mouseY, transform: `skewY(${batSkew}deg)`}} />
 
             {showMouse && <><img className='click' alt='click' src={click} /> 
             <div className='exampleContainer'>
