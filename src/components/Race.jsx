@@ -9,10 +9,9 @@ import mouseIcon from '../images/mouse-svgrepo-com.svg'
 let showMouse = true
 let lastX = 1000
 
-export default function Race(props) {
+export default function Race({ handleWin, setPaused }) {
     document.body.style.backgroundColor = 'rgb(159, 136, 86)'
     const { x, y } = mouse();
-    let { handleWin, setPaused } = props
    
     let randomWidth = Math.floor(80 * Math.random()) + 10
     let randomHeight = Math.floor(70 * Math.random()) + 10
@@ -24,8 +23,6 @@ export default function Race(props) {
     const [direction, setDirection] = useState(1)
 
     function handleDrag () {
-        setPaused(false)
-        showMouse = false
         setPositionX(x-35)
         setPositionY(y-120)
         if (lastX < x) {
@@ -37,7 +34,9 @@ export default function Race(props) {
     }
 
     const [play] = useSound(crunch)
-    function handleFinish () {
+    function handleMouseOver () {
+        setPaused(false)
+        showMouse = false
         play()
         setFinishPositionX(randomWidth)
         setFinishPositionY(randomHeight)
@@ -48,7 +47,7 @@ export default function Race(props) {
         <div onMouseMove={() => handleDrag()} className='raceWrapper'>
             <img alt='snail' draggable='false' style={{left: positionX, top: positionY, transform: `scaleX(${direction})`}} className='snail' src={snail} />
             
-            <img draggable='false' onMouseOver={handleFinish} style={{left: `${finishPositionX}vw`, top: `${finishPositionY}vh`}}  alt='finish' className='finish' src={leaf} />
+            <img draggable='false' onMouseOver={handleMouseOver} style={{left: `${finishPositionX}vw`, top: `${finishPositionY}vh`}}  alt='finish' className='finish' src={leaf} />
             {showMouse && <img alt='mouse' className='mouseIcon' src={mouseIcon}/>}
         </div>
     );

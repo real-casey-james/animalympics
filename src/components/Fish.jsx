@@ -9,7 +9,7 @@ import seaweed from '../images/seaweed-svgrepo-com.svg'
 let showControls = true
 
 export default function Fish (props) {
-    document.body.style.backgroundColor = 'cornflowerblue'
+    document.body.style.backgroundColor = 'rgb(0, 115, 230)'
     const {handleWin, setPaused} = props
 
     let randomWidth = Math.floor(80 * Math.random()) + 10

@@ -5,7 +5,7 @@ import swatSound from '../sounds/swat.wav'
 import fly from '../images/fly-insect-svgrepo-com.svg'
 import splat from '../images/splatter-svgrepo-com.svg'
 
-function Fly(props) {
+export default function Fly(props) {
     let {handleWin, top, left, setPaused, increaseCounter } = props
     const { x, y } = mouse();
     const [flyState, setFlyState] = useState(fly)
@@ -32,5 +32,3 @@ function Fly(props) {
         </div>
     );
 }
-
-export default Fly;

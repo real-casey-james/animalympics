@@ -32,11 +32,12 @@ function SwatFlies(props) {
 
     function increaseCounter () {
         counter++
+        showMouse = false
     }
 
     function handleSwatDown () {
         setSwatSkew(20)
-        showMouse = false
+        
     }
 
     function handleSwatUp () {

@@ -13,10 +13,26 @@ import mouseIcon from '../images/mouse-svgrepo-com.svg'
 let animalIndex = 0
 let showMouse = true
 let grabbed = false
+let localPause = true
 
-export default function FeedMe (props) {
-    document.body.style.backgroundColor = 'white'
-    let {handleWin, setPaused} = props
+export default function FeedMe ({handleWin, setPaused, paused}) {
+    const [backgroundColor, setBackgroundColor] = useState('rgb(255, 255, 255)')
+    document.body.style.backgroundColor = backgroundColor
+
+    let r = 255
+    let g = 255
+
+    useEffect(() => {
+        if (localPause === false) {
+            const int = setInterval(() => {
+                r -= 2
+                g--
+                setBackgroundColor(`rgb(${r}, ${g}, 255)`)
+            }, 200)
+            return () => clearInterval(int)
+        }
+    }, [localPause])
+
     let animals = [
         sheep,
         cow,
@@ -39,6 +55,7 @@ export default function FeedMe (props) {
             setPositionX(x-100)
             setPositionY(y-100)
             showMouse = false
+            localPause = false
             setPaused(false)
         }
     }
