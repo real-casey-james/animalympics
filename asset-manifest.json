@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/animalympics/static/css/main.69156d38.chunk.css",
-    "main.js": "/animalympics/static/js/main.f594f470.chunk.js",
-    "main.js.map": "/animalympics/static/js/main.f594f470.chunk.js.map",
+    "main.js": "/animalympics/static/js/main.57034a39.chunk.js",
+    "main.js.map": "/animalympics/static/js/main.57034a39.chunk.js.map",
     "runtime-main.js": "/animalympics/static/js/runtime-main.3afff528.js",
     "runtime-main.js.map": "/animalympics/static/js/runtime-main.3afff528.js.map",
     "static/js/2.ea6ee6e2.chunk.js": "/animalympics/static/js/2.ea6ee6e2.chunk.js",
@@ -87,6 +87,6 @@
     "static/js/runtime-main.3afff528.js",
     "static/js/2.ea6ee6e2.chunk.js",
     "static/css/main.69156d38.chunk.css",
-    "static/js/main.f594f470.chunk.js"
+    "static/js/main.57034a39.chunk.js"
   ]
 }
