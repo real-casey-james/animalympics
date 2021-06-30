@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/animalympics/static/css/main.fd4e6908.chunk.css",
-    "main.js": "/animalympics/static/js/main.c1c4f0cc.chunk.js",
-    "main.js.map": "/animalympics/static/js/main.c1c4f0cc.chunk.js.map",
+    "main.css": "/animalympics/static/css/main.69156d38.chunk.css",
+    "main.js": "/animalympics/static/js/main.f594f470.chunk.js",
+    "main.js.map": "/animalympics/static/js/main.f594f470.chunk.js.map",
     "runtime-main.js": "/animalympics/static/js/runtime-main.3afff528.js",
     "runtime-main.js.map": "/animalympics/static/js/runtime-main.3afff528.js.map",
     "static/js/2.ea6ee6e2.chunk.js": "/animalympics/static/js/2.ea6ee6e2.chunk.js",
@@ -12,7 +12,7 @@
     "static/js/4.a1ba6e22.chunk.js": "/animalympics/static/js/4.a1ba6e22.chunk.js",
     "static/js/4.a1ba6e22.chunk.js.map": "/animalympics/static/js/4.a1ba6e22.chunk.js.map",
     "index.html": "/animalympics/index.html",
-    "static/css/main.fd4e6908.chunk.css.map": "/animalympics/static/css/main.fd4e6908.chunk.css.map",
+    "static/css/main.69156d38.chunk.css.map": "/animalympics/static/css/main.69156d38.chunk.css.map",
     "static/js/2.ea6ee6e2.chunk.js.LICENSE.txt": "/animalympics/static/js/2.ea6ee6e2.chunk.js.LICENSE.txt",
     "static/js/3.fce6e76f.chunk.js.LICENSE.txt": "/animalympics/static/js/3.fce6e76f.chunk.js.LICENSE.txt",
     "static/media/172134__paulmorek__nom-d-01.18b33ba0.wav": "/animalympics/static/media/172134__paulmorek__nom-d-01.18b33ba0.wav",
@@ -25,6 +25,7 @@
     "static/media/99636__tomlija__small-crowd-yelling-yeah.8e049e25.wav": "/animalympics/static/media/99636__tomlija__small-crowd-yelling-yeah.8e049e25.wav",
     "static/media/animal-dog-svgrepo-com.6de7b05a.svg": "/animalympics/static/media/animal-dog-svgrepo-com.6de7b05a.svg",
     "static/media/baby-animal-shaped-plate-svgrepo-com.f50ee51e.svg": "/animalympics/static/media/baby-animal-shaped-plate-svgrepo-com.f50ee51e.svg",
+    "static/media/bang.eaf2fbaa.wav": "/animalympics/static/media/bang.eaf2fbaa.wav",
     "static/media/bat-svgrepo-com.70586465.svg": "/animalympics/static/media/bat-svgrepo-com.70586465.svg",
     "static/media/beetle-svgrepo-com.b7ee05b7.svg": "/animalympics/static/media/beetle-svgrepo-com.b7ee05b7.svg",
     "static/media/bubbles.d8fe8dd0.wav": "/animalympics/static/media/bubbles.d8fe8dd0.wav",
@@ -36,7 +37,11 @@
     "static/media/cancel-svgrepo-com.84cc0f9a.svg": "/animalympics/static/media/cancel-svgrepo-com.84cc0f9a.svg",
     "static/media/checked-tick-svgrepo-com.2acefe54.svg": "/animalympics/static/media/checked-tick-svgrepo-com.2acefe54.svg",
     "static/media/click-svgrepo-com.5d6ea1db.svg": "/animalympics/static/media/click-svgrepo-com.5d6ea1db.svg",
+    "static/media/cloud-svgrepo-com-2.0c778214.svg": "/animalympics/static/media/cloud-svgrepo-com-2.0c778214.svg",
+    "static/media/cloud-svgrepo-com.a632893a.svg": "/animalympics/static/media/cloud-svgrepo-com.a632893a.svg",
+    "static/media/clouds-cloud-svgrepo-com.8b06b886.svg": "/animalympics/static/media/clouds-cloud-svgrepo-com.8b06b886.svg",
     "static/media/cow-animals-svgrepo-com.e6d9f8d7.svg": "/animalympics/static/media/cow-animals-svgrepo-com.e6d9f8d7.svg",
+    "static/media/crosshairs-solid-svgrepo-com.1c466f93.svg": "/animalympics/static/media/crosshairs-solid-svgrepo-com.1c466f93.svg",
     "static/media/deer-facing-right-svgrepo-com.0d5a4aaf.svg": "/animalympics/static/media/deer-facing-right-svgrepo-com.0d5a4aaf.svg",
     "static/media/donut-svgrepo-com.502a36ba.svg": "/animalympics/static/media/donut-svgrepo-com.502a36ba.svg",
     "static/media/duck-nature-bird-target-svgrepo-com.10c3325c.svg": "/animalympics/static/media/duck-nature-bird-target-svgrepo-com.10c3325c.svg",
@@ -45,6 +50,14 @@
     "static/media/fish-svgrepo-com.d9ce8d7e.svg": "/animalympics/static/media/fish-svgrepo-com.d9ce8d7e.svg",
     "static/media/fly-insect-svgrepo-com.f5f6be01.svg": "/animalympics/static/media/fly-insect-svgrepo-com.f5f6be01.svg",
     "static/media/fly-swatter-svgrepo-com.0005a721.svg": "/animalympics/static/media/fly-swatter-svgrepo-com.0005a721.svg",
+    "static/media/frame-1v.c877ae36.svg": "/animalympics/static/media/frame-1v.c877ae36.svg",
+    "static/media/frame-2v.ce8c5aff.svg": "/animalympics/static/media/frame-2v.ce8c5aff.svg",
+    "static/media/frame-3v.4b639fe8.svg": "/animalympics/static/media/frame-3v.4b639fe8.svg",
+    "static/media/frame-4v.caf4eb4a.svg": "/animalympics/static/media/frame-4v.caf4eb4a.svg",
+    "static/media/frame-5v.9add1490.svg": "/animalympics/static/media/frame-5v.9add1490.svg",
+    "static/media/frame-6v.891e7f5f.svg": "/animalympics/static/media/frame-6v.891e7f5f.svg",
+    "static/media/frame-7v.a171e5f6.svg": "/animalympics/static/media/frame-7v.a171e5f6.svg",
+    "static/media/frame-8v.22c6e525.svg": "/animalympics/static/media/frame-8v.22c6e525.svg",
     "static/media/fries-svgrepo-com.471be26b.svg": "/animalympics/static/media/fries-svgrepo-com.471be26b.svg",
     "static/media/halloween-monster-animal-head-with-big-open-mouth-svgrepo-com.372c5c01.svg": "/animalympics/static/media/halloween-monster-animal-head-with-big-open-mouth-svgrepo-com.372c5c01.svg",
     "static/media/leaf-svgrepo-com.8bee0ce6.svg": "/animalympics/static/media/leaf-svgrepo-com.8bee0ce6.svg",
@@ -62,6 +75,7 @@
     "static/media/sheep-animals-svgrepo-com.50df9e15.svg": "/animalympics/static/media/sheep-animals-svgrepo-com.50df9e15.svg",
     "static/media/snail-svgrepo-com.3e4d7ab8.svg": "/animalympics/static/media/snail-svgrepo-com.3e4d7ab8.svg",
     "static/media/splatter-svgrepo-com.eab25a88.svg": "/animalympics/static/media/splatter-svgrepo-com.eab25a88.svg",
+    "static/media/squawk.0b187683.wav": "/animalympics/static/media/squawk.0b187683.wav",
     "static/media/squeek.6837caa7.wav": "/animalympics/static/media/squeek.6837caa7.wav",
     "static/media/swan-animals-svgrepo-com.ea8f0733.svg": "/animalympics/static/media/swan-animals-svgrepo-com.ea8f0733.svg",
     "static/media/swat.0cde323f.wav": "/animalympics/static/media/swat.0cde323f.wav",
@@ -72,7 +86,7 @@
   "entrypoints": [
     "static/js/runtime-main.3afff528.js",
     "static/js/2.ea6ee6e2.chunk.js",
-    "static/css/main.fd4e6908.chunk.css",
-    "static/js/main.c1c4f0cc.chunk.js"
+    "static/css/main.69156d38.chunk.css",
+    "static/js/main.f594f470.chunk.js"
   ]
 }
