@@ -28,6 +28,9 @@ function Birds({setPaused, handleWin}) {
                     b -= 0.71
                     setBackgroundColor(`rgb(${Math.floor(r)}, ${Math.floor(g)}, ${Math.floor(b)})`)
         }, 200);
+        const time0 = setTimeout(() => {
+            localPause = true
+        }, 7000);
         return () => clearInterval(int)
     }
     }, [localPause])
@@ -48,8 +51,8 @@ function Birds({setPaused, handleWin}) {
             let randomYindex = Math.floor(Math.random() * 80)
             birdArray.push(<Bird handleWin={() => handleWin()} randomYindex={randomYindex} />)
             setBirds([...birdArray])
-        }, 500);
-        return () => clearInterval(int)
+            }, 500);
+            return () => clearInterval(int)
     }
     }, [localPause])
 

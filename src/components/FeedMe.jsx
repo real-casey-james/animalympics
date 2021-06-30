@@ -29,6 +29,9 @@ export default function FeedMe ({handleWin, setPaused, paused}) {
                 g--
                 setBackgroundColor(`rgb(${r}, ${g}, 255)`)
             }, 200)
+            const time0 = setTimeout(() => {
+                localPause = true
+            }, 7000);
             return () => clearInterval(int)
         }
     }, [localPause])
