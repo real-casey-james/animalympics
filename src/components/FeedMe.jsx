@@ -15,7 +15,7 @@ let showMouse = true
 let grabbed = false
 let localPause = true
 
-export default function FeedMe ({handleWin, setPaused, paused}) {
+export default function FeedMe ({ handleWin, setPaused }) {
     const [backgroundColor, setBackgroundColor] = useState('rgb(255, 255, 255)')
     document.body.style.backgroundColor = backgroundColor
 

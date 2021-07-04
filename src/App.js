@@ -5,13 +5,12 @@ import Score from './components/Score'
 import Timer from './components/Timer'
 import Start from './components/Start'
 import FeedMe from './components/FeedMe'
-import MoveAway from './components/MoveAway'
+import WackMole from './components/WackMole'
 import DuplicateContainer from './components/DuplicateContainer'
 import Fish from './components/Fish'
 import Race from './components/Race'
 import Letters from './components/Letters'
-import FoodFall from './components/FoodFall';
-import FoodFallInstr from './components/FoodFallInstr';
+import FoodFall2 from './components/FoodFall2';
 import ClickLots from './components/ClickLots'
 import SwatFlies from './components/SwatFlies';
 import End from './components/End'
@@ -40,9 +39,8 @@ export default function App () {
         <FeedMe paused={paused} setPaused={setPaused} handleWin={() => handleWin()} />,
         <Birds setPaused={setPaused} handleWin={() => handleWin()} />,
         <Fish setPaused={setPaused} handleWin={() => handleWin()}/>,
-        <MoveAway setPaused={setPaused} handleClick={() => handleWin()}  losePoint={losePoint} />,
-        <FoodFallInstr advanceComponent={advanceComponent} />,
-        <FoodFall handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
+        <WackMole setPaused={setPaused} handleClick={() => handleWin()}  losePoint={losePoint} />,
+        <FoodFall2 handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
         <SwatFlies setPaused={setPaused} handleWin={() => handleWin()} losePoint={losePoint}/>,
         <Letters handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
         <ClickLots setPaused={setPaused} handleWin={() => handleWin()} />,
@@ -98,7 +96,7 @@ export default function App () {
             <Score setWin={() => setWin()} win={win} setLose={() => setLose()} lose={lose} setFinalScore={setFinalScore} reset={reset} setReset={setReset}/>
         </div>
         {component}
-       
+        
         </>
     )
 }

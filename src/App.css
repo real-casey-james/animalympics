@@ -65,23 +65,47 @@
   cursor: none;
 }
 
-.mole {
-  height: 150px;
+.wackAnimal {
+  width: 10vw;
   position: fixed;
   user-select: none;
 }
 
-.ostrich {
-  height: 150px;
-  position: fixed;
+.animalPop {
+  animation-name: animalPop;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+@keyframes animalPop {
+  0% {width: 10vw; transform:translate(0px, 0px)}
+  40% {width: 0vw; transform:translate(75px, 150px)}
+  60% {width: 0vw; transform:translate(75px, 150px)}
+  100% {width: 10vw; transform:translate(0px, 0px)}
+}
+
+.mound {
+  width: 20vw;
+  opacity: 0.5;
+  padding-bottom: 8vh;
   user-select: none;
+  pointer-events: none;
+}
+
+.moundContainer {
+  position: fixed;
+  top: 15vh;
+  left: 0;
+  z-index: -2;
+  pointer-events: none;
 }
 
 .bat {
   position: fixed;
-  height: 250px;
+  height: 180px;
   pointer-events: none;
   transform-origin: 0% 100% 0;
+  user-select: none;
 }
 
 .click {
@@ -94,6 +118,7 @@
   animation-duration: 2s;
   animation-iteration-count: infinite;
   pointer-events: none;
+  user-select: none;
 }
 
 @keyframes click {
@@ -104,25 +129,27 @@
 
 .exampleMole {
   height: 200px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .tick {
   height: 100px;
   margin-right: 40px;
-  opacity: 0.5;
+  opacity: 0.7;
   animation-name: pulse;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+  user-select: none;
 }
 
 .cross {
   height: 100px;
   margin-left: 40px;
-  opacity: 0.5;
+  opacity: 0.7;
   animation-name: pulse;
   animation-duration: 2s;
   animation-iteration-count: infinite;
+  user-select: none;
 }
 
 @keyframes pulse {
@@ -339,39 +366,11 @@
   cursor: none;
 }
 
-.food {
+.food2 {
   width: 100px;
   position: fixed;
-  left: 25vw;
-  bottom: 80vh;
   padding: 50px;
   z-index: 2;
-  animation-name: foodDrop;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes foodDrop {
-  0% {bottom: 120vh}
-  10% {bottom: 110vh}
-  15% {bottom: 90vh}
-  20% {bottom: 85vh}
-  25% {bottom: 80vh}
-  30% {bottom: 75vh}
-  35% {bottom: 72.5vh}
-  40% {bottom: 70vh}
-  45% {bottom: 67.5vh}
-  50% {bottom: 65vh}
-  55% {bottom: 60vh}
-  60% {bottom: 55vh}
-  65% {bottom: 50vh}
-  70% {bottom: 45vh}
-  75% {bottom: 37.5vh}
-  80% {bottom: 30vh}
-  85% {bottom: 22.5vh}
-  90% {bottom: 15vh}
-  95% {bottom: 7.5vh}
-  100%  {bottom: 0vh; visibility: hidden}
 }
 
 .exFoodContainer {
@@ -382,7 +381,6 @@
 
 .exampleFoodfallContainer {
   display: flex;
-  /* flex-direction: column; */
   align-content: center;
   justify-content: center;
   height: 200px;
@@ -518,9 +516,9 @@
 
 @keyframes birdfly {
   0% {left: -20vw; transform:translateY(-50px)}
-  25% {transform:translateY(150px)}
+  25% {transform:translateY(100px)}
   50% {transform:translateY(-50px)}
-  75% {transform:translateY(150px)}
+  75% {transform:translateY(100px)}
   100% {left: 120vw; transform:translateY(-50px)}
 }
 
@@ -537,43 +535,22 @@
   cursor: none;
 }
 
-.cloud1 {
+.cloud {
   position: fixed;
-  top: 50px;
-  left: 10vw;
   width: 300px;
   opacity: 0.5;
   z-index: -1;
-  animation-name: cloud;
-  animation-duration: 10s;
-  animation-iteration-count: 1;
+}
+
+.cloud1 {
+  top: 50px;
 }
 
 .cloud2 {
-  position: fixed;
   top: 100px;
-  left: 70vw;
-  width: 300px;
-  opacity: 0.5;
-  z-index: -1;
-  animation-name: cloud;
-  animation-duration: 10s;
-  animation-iteration-count: 1;
 }
 
 .cloud3 {
-  position: fixed;
   top: 200px;
-  left: 40vw;
-  width: 300px;
   opacity: 0.4;
-  z-index: -1;
-  animation-name: cloud;
-  animation-duration: 10s;
-  animation-iteration-count: 1;
-}
-
-@keyframes cloud {
-  0% {transform:translateX(200px)}
-  100% {transform:translateX(0px)}
 }
