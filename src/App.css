@@ -412,6 +412,30 @@
   z-index: -1;
 }
 
+.road {
+  /* border: 2px solid red; */
+  background-color: rgba(155, 129, 113, 0.379);
+  height: 100vh;
+  width: 300px;
+  position: fixed;
+  top: 0px;
+  left: 40vw;
+  z-index: -2;
+}
+
+.vehicle {
+  width: 120px;
+  position: fixed;
+  left: 41vw;
+}
+
+.vehicle2 {
+  width: 120px;
+  position: fixed;
+  right: 40vw;
+  bottom: 5vh;
+}
+
 .clickWrapper {
   height: 90vh;
   width: 100vw;
@@ -505,21 +529,51 @@
 }
 
 .bird {
-  height: 110px;
+  height: 150px;
+  width: 150px;
   position: fixed;
-  animation-name: birdfly;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  user-select: none;
-  padding: 50px;
+  background-size: 150px 150px;
+}
+
+.birdTarget {
+  width: 150%;
+  height: 150%;
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+}
+
+.birdfly {
+  animation: birdfly 6s infinite, birdflap linear 1s infinite;
+}
+
+.birdhit {
+  animation: birdhit 2s 1 forwards;
+}
+
+@keyframes birdflap {
+  0% {background-image: url('./images/frame-1v.svg')}
+  12.5% {background-image: url('./images/frame-2v.svg')}
+  25% {background-image: url('./images/frame-3v.svg')}
+  37.5% {background-image: url('./images/frame-4v.svg')}
+  50% {background-image: url('./images/frame-5v.svg')}
+  62.5% {background-image: url('./images/frame-6v.svg')}
+  75% {background-image: url('./images/frame-7v.svg')}
+  87.5% {background-image: url('./images/frame-8v.svg')}
+  100% {background-image: url('./images/frame-1v.svg')}
 }
 
 @keyframes birdfly {
-  0% {left: -20vw; transform:translateY(-50px)}
-  25% {transform:translateY(100px)}
-  50% {transform:translateY(-50px)}
-  75% {transform:translateY(100px)}
-  100% {left: 120vw; transform:translateY(-50px)}
+  0% {left: -20vw; transform:translateY(-5vh)}
+  25% {transform:translateY(10vh)}
+  50% {transform:translateY(-5vh)}
+  75% {transform:translateY(10vh)}
+  100% {left: 120vw; transform:translateY(-5vh)}
+}
+
+@keyframes birdhit {
+  0% {background-image: url('./images/frame-1v.svg'); transform:translateY(0vh) translateX(0vw) rotate(0deg)}
+  100% {background-image: url('./images/frame-1v.svg'); transform:translateY(120vh) translateX(50vw) rotate(360deg)}
 }
 
 .crosshairs {
@@ -544,13 +598,21 @@
 
 .cloud1 {
   top: 50px;
+  animation: 30s linear clouds -21s infinite;
 }
 
 .cloud2 {
   top: 100px;
+  animation: 30s linear clouds -1s infinite;
 }
 
 .cloud3 {
   top: 200px;
   opacity: 0.4;
+  animation: 30s linear clouds -11s infinite;
+}
+
+@keyframes clouds {
+  0% {left: 100vw}
+  100% {left: -35vw}
 }

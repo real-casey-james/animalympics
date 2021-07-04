@@ -1,56 +1,32 @@
-import React, { useEffect, useState } from 'react';
-
-import frame1 from '../images/frame-1v.svg'
-import frame2 from '../images/frame-2v.svg'
-import frame3 from '../images/frame-3v.svg'
-import frame4 from '../images/frame-4v.svg'
-import frame5 from '../images/frame-5v.svg'
-import frame6 from '../images/frame-6v.svg'
-import frame7 from '../images/frame-7v.svg'
-import frame8 from '../images/frame-8v.svg'
+import React, { useState } from 'react';
+import mouse from '../scripts/useMousePosition.js'
+import useWindowSize from '../scripts/useWindowSize'
 
 import useSound from 'use-sound'
 import birdhit from '../sounds/squawk.wav'
 
-let frameIndex = 0
+export default function Bird({ randomYindex, handleWin }) {
 
-function Bird({randomYindex, handleWin}) {
+    const { x, y } = mouse();
+    const size = useWindowSize();
 
-    const frameArray = [frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8]
-
-    const [frame, setFrame] = useState(frameArray[frameIndex])
+    const [positionX, setPositionX] = useState('')
     const [positionY, setPositionY] = useState(randomYindex)
-
-    useEffect(() => {
-        const int = setInterval(() => {
-            frameIndex++
-            if (frameIndex === frameArray.length - 1) { frameIndex = 0 }
-            setFrame(frameArray[frameIndex])
-        }, 100);
-        return () => clearInterval(int)
-    }, [])
+    const [birdClass, setBirdClass] = useState('bird birdfly')
  
     const [hit] = useSound(birdhit)
 
     function handleHit () {
+        setPositionX(x - 65)
+        setPositionY(((y / size.height) * 100) - 4)
+        setBirdClass('bird birdhit')
         hit()
         handleWin()
-        let y = positionY
-        const drop = setInterval(() => {
-            y += 1
-            setPositionY(y)
-            if (y > 100) {
-                clearInterval(drop)
-            }
-        }, 10)
-        return () => clearInterval(drop)
     }
 
     return (
-        <div>
-            <img draggable='false' onClick={() => handleHit()} className='bird' style={{top: `${positionY}vh`}} src={frame} alt="bird" />
-        </div>
+            <div draggable='false' className={birdClass} style={{top: `${positionY}vh`, left: positionX}} alt="bird" >
+                <div className='birdTarget' onClick={() => handleHit()} />
+            </div>
     );
 }
-
-export default Bird;

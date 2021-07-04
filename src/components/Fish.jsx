@@ -7,7 +7,7 @@ import keys from '../images/pngwing.com.png'
 import seaweed from '../images/seaweed-svgrepo-com.svg'
 
 let showControls = true
-let i = 0 
+// let i = 0 
 
 export default function Fish ({ handleWin, setPaused }) {
     document.body.style.backgroundColor = 'rgb(0, 115, 230)'
@@ -33,9 +33,7 @@ export default function Fish ({ handleWin, setPaused }) {
                     x += 1
                     i++
                     setFishPositionX(x) 
-                    if (i > 10) {
-                        clearInterval(int)
-                    }
+                    if (i > 10) { clearInterval(int) }
                 }, 10)       
             }
             if (event.key === 'ArrowLeft') {
@@ -46,9 +44,7 @@ export default function Fish ({ handleWin, setPaused }) {
                     x -= 1
                     i++
                     setFishPositionX(x) 
-                    if (i > 10) {
-                        clearInterval(int)
-                    }
+                    if (i > 10) { clearInterval(int) }
                 }, 10)  
             }
             if (event.key === 'ArrowUp') { 
@@ -58,9 +54,7 @@ export default function Fish ({ handleWin, setPaused }) {
                     y -= 1
                     i++
                     setFishPositionY(y) 
-                    if (i > 10) {
-                        clearInterval(int)
-                    }
+                    if (i > 10) { clearInterval(int) }
                 }, 10)  
                 }
             if (event.key === 'ArrowDown') { 
@@ -70,9 +64,7 @@ export default function Fish ({ handleWin, setPaused }) {
                     y += 1
                     i++
                     setFishPositionY(y) 
-                    if (i > 10) {
-                        clearInterval(int)
-                    }
+                    if (i > 10) { clearInterval(int) }
                 }, 10)  
                 }
     }

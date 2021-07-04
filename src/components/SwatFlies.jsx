@@ -13,63 +13,49 @@ import fly from '../images/fly-insect-svgrepo-com.svg'
 import butterfly from '../images/butterfly-svgrepo-com.svg'
 
 let showMouse = true
-let counter = 0 
 
-function SwatFlies(props) {
+function SwatFlies({ setPaused, handleWin, losePoint }) {
     document.body.style.backgroundColor = '#df80ff'
     
-    const {setPaused, handleWin, losePoint} = props
-
     const { x, y } = mouse();
     const [positionX, setPositionX] = useState(200)
     const [positionY, setPositionY] = useState(50)
     const [swatSkew, setSwatSkew] = useState(0)
+
+    let insectArray = [
+        <Fly handleSwatFly={() => handleSwatFly()} top={20} left={15} />,
+        <Butterfly losePoint={() => losePoint()} top={80} left={75} /> 
+    ]
+
+    const [insects, setInsects] = useState(insectArray)
 
     function handleMouseMove () {
         setPositionX(x-150)
         setPositionY(y-50)
     }
 
-    function increaseCounter () {
-        counter++
+    function handleSwatFly () {
+        handleWin()
         showMouse = false
+        setPaused(false)
+        insectArray.push(<Fly handleSwatFly={() => handleSwatFly()} top={Math.floor(Math.random() * 80)} left={Math.floor(Math.random() * 80)} />)
+        if (Math.random() < 0.25) {
+            insectArray.push(<Butterfly losePoint={() => losePoint()} top={Math.floor(Math.random() * 80)} left={Math.floor(Math.random() * 80)} />)
+        } else {
+            insectArray.push(<Fly handleSwatFly={() => handleSwatFly()} top={Math.floor(Math.random() * 80)} left={Math.floor(Math.random() * 80)} />)
+        }
+        setInsects([...insectArray])
     }
 
-    function handleSwatDown () {
-        setSwatSkew(20)
-        
-    }
-
-    function handleSwatUp () {
-        setSwatSkew(0)
-    }
+    function handleSwatDown () { setSwatSkew(20) }
+    function handleSwatUp () { setSwatSkew(0) }
 
     return (
         <div draggable='false' className='swatContainer' onMouseMove={() => handleMouseMove()} onMouseDown={() => handleSwatDown()} onMouseUp={() => handleSwatUp()}>
             <img draggable='false' className='swat' src={swat} style={{left: positionX, top: positionY, transform: `skewY(${swatSkew}deg)`}}  alt="swat" />
 
-           {counter >= 0 && <Fly handleWin={() => handleWin()} top='20vh' left='15vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()}  /> }
-           {counter >= 0 && <Butterfly losePoint={() => losePoint()} top='80vh' left='75vw' setPaused={() => setPaused()}  />  }
-           {counter >= 1 && <Fly handleWin={() => handleWin()} top='70vh' left='55vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()}  /> }
-           {counter >= 2 && <Butterfly losePoint={() => losePoint()} top='20vh' left='45vw' setPaused={() => setPaused()} /> }
-           {counter >= 2 && <Fly handleWin={() => handleWin()} top='80vh' left='15vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 3 && <Fly handleWin={() => handleWin()} top='40vh' left='35vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 4 && <Fly handleWin={() => handleWin()} top='15vh' left='75vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 5 && <Butterfly losePoint={() => losePoint()} top='50vh' left='10vw' setPaused={() => setPaused()} /> }
-           {counter >= 5 && <Fly handleWin={() => handleWin()} top='80vh' left='15vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 6 && <Fly handleWin={() => handleWin()} top='40vh' left='75vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 7 && <Fly handleWin={() => handleWin()} top='70vh' left='35vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 8 && <Fly handleWin={() => handleWin()} top='10vh' left='5vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 9 && <Fly handleWin={() => handleWin()} top='40vh' left='60vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 10 && <Butterfly losePoint={() => losePoint()} top='80vh' left='25vw' setPaused={() => setPaused()} /> }
-           {counter >= 10 && <Fly handleWin={() => handleWin()} top='70vh' left='5vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 11 && <Fly handleWin={() => handleWin()} top='10vh' left='80vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 12 && <Fly handleWin={() => handleWin()} top='10vh' left='60vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 13 && <Fly handleWin={() => handleWin()} top='20vh' left='30vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 14 && <Fly handleWin={() => handleWin()} top='40vh' left='20vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 15 && <Fly handleWin={() => handleWin()} top='50vh' left='50vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-           {counter >= 16 && <Fly handleWin={() => handleWin()} top='60vh' left='20vw' setPaused={() => setPaused()} increaseCounter={() => increaseCounter()} /> }
-
+           {insects}
+    
            {showMouse && <><img className='click' alt='click' src={click} /> 
             <div className='exampleContainer'>
             <div className='imgContainer'>

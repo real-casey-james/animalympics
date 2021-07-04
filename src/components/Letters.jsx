@@ -5,19 +5,13 @@ import useSound from 'use-sound'
 import duckWin from '../sounds/duckwin.wav'
 import duckLose from '../sounds/ducklose.wav'
 
-function Letters(props) {
+function Letters({ losePoint, handleWin, setPaused }) {
     document.body.style.backgroundColor = '#4db8ff'
 
-    const {losePoint, handleWin, setPaused} = props
-
-    let randomWidth = Math.floor(70 * Math.random()) + 10
-    let randomHeight = Math.floor(70 * Math.random()) + 10
     const [positionY, setPositionY] = useState(40)
     const [positionX, setPositionX] = useState(40)
 
-    const [duckLetter, setDuckLetter] = useState('m')
-
-    let randomLetterCode = Math.floor((Math.random() * 25) + 97)
+    const [duckLetter, setDuckLetter] = useState(String.fromCharCode(Math.floor((Math.random() * 25) + 97)))
 
     const [win] = useSound(duckWin)
     const [lose] = useSound(duckLose)
@@ -26,16 +20,15 @@ function Letters(props) {
         setPaused(false)
         if (event.key === duckLetter) {
             win()
-            setPositionX(randomWidth)
-            setPositionY(randomHeight)
-            setDuckLetter(String.fromCharCode(randomLetterCode))
+            setPositionX(Math.floor(80 * Math.random()))
+            setPositionY(Math.floor(80 * Math.random()))
+            setDuckLetter(String.fromCharCode(Math.floor((Math.random() * 25) + 97)))
             handleWin()
         } else {
             lose()
             losePoint()
         }
     }
-
 
     return (
         <div>

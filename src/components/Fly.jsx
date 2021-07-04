@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import mouse from '../scripts/useMousePosition.js'
+import useWindowSize from '../scripts/useWindowSize'
 import useSound from 'use-sound';
 import swatSound from '../sounds/swat.wav'
 import fly from '../images/fly-insect-svgrepo-com.svg'
 import splat from '../images/splatter-svgrepo-com.svg'
 
-export default function Fly(props) {
-    let {handleWin, top, left, setPaused, increaseCounter } = props
+export default function Fly({ handleSwatFly, top, left }) {
     const { x, y } = mouse();
+    const size = useWindowSize();
     const [flyState, setFlyState] = useState(fly)
     const [insectClass, setInsectClass] = useState('fly')
     const [positionX, setPositionX] = useState(left)
@@ -16,19 +17,17 @@ export default function Fly(props) {
     const [play] = useSound(swatSound)
 
     function handleSwat () {
-        setPaused(false)
-            increaseCounter()
             play()
-            setPositionX(x - 50)
-            setPositionY(y - 50)
+            setPositionX(((x / size.width) * 100) - 5)
+            setPositionY(((y / size.height) * 100) - 5)
             setFlyState(splat)
             setInsectClass('splatClass')
-            handleWin()
+            handleSwatFly()
     }
     
     return (
         <div>
-            <img draggable='false' style={{left: positionX, top: positionY}} className={insectClass} src={flyState} alt="fly" onClick={() => handleSwat()} />
+            <img draggable='false' style={{left: `${positionX}vw`, top: `${positionY}vh`}} className={insectClass} src={flyState} alt="fly" onClick={() => handleSwat()} />
         </div>
     );
 }

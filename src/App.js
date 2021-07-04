@@ -51,19 +51,9 @@ export default function App () {
     
     const [component, setComponent] = useState(arr[counter])
     
-    function handleWin () {
-        setWin(true)
-    }
+    function handleWin () { setWin(true) }
 
-    function losePoint () {
-        setLose(true)
-    }
-
-    function advanceComponent () {
-        counter++
-        setComponent(arr[counter])
-        setPaused(false)
-    }
+    function losePoint () { setLose(true) }
 
     function handleLose () {
         counter++
@@ -96,7 +86,7 @@ export default function App () {
             <Score setWin={() => setWin()} win={win} setLose={() => setLose()} lose={lose} setFinalScore={setFinalScore} reset={reset} setReset={setReset}/>
         </div>
         {component}
-        
+        {/* <ClickLots setPaused={setPaused} handleWin={() => handleWin()} /> */}
         </>
     )
 }
