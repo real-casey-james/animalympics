@@ -43,7 +43,7 @@ export default function App () {
         <FoodFall2 handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
         <SwatFlies setPaused={setPaused} handleWin={() => handleWin()} losePoint={losePoint}/>,
         <Letters handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
-        <ClickLots setPaused={setPaused} handleWin={() => handleWin()} />,
+        <ClickLots setPaused={setPaused} handleWin={() => handleWin()} losePoint={losePoint} />,
         <DuplicateContainer setPaused={setPaused} handleWin={() => handleWin()} handleClick={() => handleClick()} />,
         <Race setPaused={setPaused} handleClick={() => handleClick()} handleWin={() => handleWin()} />,
         <End score={finalScore} setPaused={setPaused} resetScore={resetScore} setShowTimer={setShowTimer} />
@@ -86,7 +86,6 @@ export default function App () {
             <Score setWin={() => setWin()} win={win} setLose={() => setLose()} lose={lose} setFinalScore={setFinalScore} reset={reset} setReset={setReset}/>
         </div>
         {component}
-        {/* <ClickLots setPaused={setPaused} handleWin={() => handleWin()} /> */}
         </>
     )
 }

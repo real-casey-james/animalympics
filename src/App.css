@@ -404,7 +404,7 @@
 }
 
 .finishLine {
-  border-left: 15px dashed white;
+  border-left: 15px dashed #e6ffe66f;
   height: 90vh;
   width: 10vw;
   position: fixed;
@@ -413,8 +413,7 @@
 }
 
 .road {
-  /* border: 2px solid red; */
-  background-color: rgba(155, 129, 113, 0.379);
+  background-color: #e6ffe66f;
   height: 100vh;
   width: 300px;
   position: fixed;
@@ -423,30 +422,35 @@
   z-index: -2;
 }
 
+.centreline {
+  border-right: 15px dashed #e6ffe66f;
+  height: 100vh;
+  width: 150px;
+}
+
 .vehicle {
   width: 120px;
-  position: fixed;
-  left: 41vw;
+  position: absolute;
+  right: 15px;
+  top: 100px;
 }
 
 .vehicle2 {
   width: 120px;
-  position: fixed;
-  right: 40vw;
-  bottom: 5vh;
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
 }
 
 .clickWrapper {
   height: 90vh;
   width: 100vw;
+  cursor: pointer;
 }
 
 .clickLots {
-  width: 10vw;
   opacity: 0.5;
   position: fixed;
-  left: 45vw;
-  top: 40vh;
   animation-name: clickclick;
   animation-duration: 0.3s;
   animation-iteration-count: infinite;
@@ -454,9 +458,9 @@
 }
 
 @keyframes clickclick {
-  0% {left: 45vw; top: 40vh; width: 10vw}
-  50% {left: 44vw; top: 39vh; width: 9vw}
-  100% {left: 45vw; top: 40vh; width: 10vw}
+  0% {left: 25vw; top: 40vh; width: 10vw}
+  50% {left: 24vw; top: 39vh; width: 9vw}
+  100% {left: 25vw; top: 40vh; width: 10vw}
 }
 
 .fly {
