@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/animalympics/static/css/main.f44a4c9b.chunk.css",
-    "main.js": "/animalympics/static/js/main.f430349f.chunk.js",
-    "main.js.map": "/animalympics/static/js/main.f430349f.chunk.js.map",
+    "main.css": "/animalympics/static/css/main.2f51882d.chunk.css",
+    "main.js": "/animalympics/static/js/main.73189cd2.chunk.js",
+    "main.js.map": "/animalympics/static/js/main.73189cd2.chunk.js.map",
     "runtime-main.js": "/animalympics/static/js/runtime-main.0b6c8d69.js",
     "runtime-main.js.map": "/animalympics/static/js/runtime-main.0b6c8d69.js.map",
     "static/js/2.53f9a5b7.chunk.js": "/animalympics/static/js/2.53f9a5b7.chunk.js",
@@ -12,7 +12,7 @@
     "static/js/4.001e997e.chunk.js": "/animalympics/static/js/4.001e997e.chunk.js",
     "static/js/4.001e997e.chunk.js.map": "/animalympics/static/js/4.001e997e.chunk.js.map",
     "index.html": "/animalympics/index.html",
-    "static/css/main.f44a4c9b.chunk.css.map": "/animalympics/static/css/main.f44a4c9b.chunk.css.map",
+    "static/css/main.2f51882d.chunk.css.map": "/animalympics/static/css/main.2f51882d.chunk.css.map",
     "static/js/2.53f9a5b7.chunk.js.LICENSE.txt": "/animalympics/static/js/2.53f9a5b7.chunk.js.LICENSE.txt",
     "static/js/3.a7071c9b.chunk.js.LICENSE.txt": "/animalympics/static/js/3.a7071c9b.chunk.js.LICENSE.txt",
     "static/media/172134__paulmorek__nom-d-01.18b33ba0.wav": "/animalympics/static/media/172134__paulmorek__nom-d-01.18b33ba0.wav",
@@ -25,6 +25,9 @@
     "static/media/99636__tomlija__small-crowd-yelling-yeah.8e049e25.wav": "/animalympics/static/media/99636__tomlija__small-crowd-yelling-yeah.8e049e25.wav",
     "static/media/ambulance-svgrepo-com.5e48305c.svg": "/animalympics/static/media/ambulance-svgrepo-com.5e48305c.svg",
     "static/media/animal-dog-svgrepo-com.6de7b05a.svg": "/animalympics/static/media/animal-dog-svgrepo-com.6de7b05a.svg",
+    "static/media/animal-kingdom-coati-svgrepo-com.274826c2.svg": "/animalympics/static/media/animal-kingdom-coati-svgrepo-com.274826c2.svg",
+    "static/media/arrow-svgrepo-com.e6cbbf9b.svg": "/animalympics/static/media/arrow-svgrepo-com.e6cbbf9b.svg",
+    "static/media/axe-svgrepo-com.bd16dc01.svg": "/animalympics/static/media/axe-svgrepo-com.bd16dc01.svg",
     "static/media/baby-animal-shaped-plate-svgrepo-com.f50ee51e.svg": "/animalympics/static/media/baby-animal-shaped-plate-svgrepo-com.f50ee51e.svg",
     "static/media/bang.eaf2fbaa.wav": "/animalympics/static/media/bang.eaf2fbaa.wav",
     "static/media/bat-svgrepo-com.70586465.svg": "/animalympics/static/media/bat-svgrepo-com.70586465.svg",
@@ -45,10 +48,12 @@
     "static/media/cloud-svgrepo-com-2.0c778214.svg": "/animalympics/static/media/cloud-svgrepo-com-2.0c778214.svg",
     "static/media/cloud-svgrepo-com.a632893a.svg": "/animalympics/static/media/cloud-svgrepo-com.a632893a.svg",
     "static/media/clouds-cloud-svgrepo-com.8b06b886.svg": "/animalympics/static/media/clouds-cloud-svgrepo-com.8b06b886.svg",
+    "static/media/computer-mouse-with-wheel.96333c3a.svg": "/animalympics/static/media/computer-mouse-with-wheel.96333c3a.svg",
     "static/media/cow-animals-svgrepo-com.e6d9f8d7.svg": "/animalympics/static/media/cow-animals-svgrepo-com.e6d9f8d7.svg",
     "static/media/crash.8d3eee4b.wav": "/animalympics/static/media/crash.8d3eee4b.wav",
     "static/media/crosshairs-solid-svgrepo-com.1c466f93.svg": "/animalympics/static/media/crosshairs-solid-svgrepo-com.1c466f93.svg",
     "static/media/deer-facing-right-svgrepo-com.0d5a4aaf.svg": "/animalympics/static/media/deer-facing-right-svgrepo-com.0d5a4aaf.svg",
+    "static/media/ding.0e84bc70.wav": "/animalympics/static/media/ding.0e84bc70.wav",
     "static/media/donut-svgrepo-com.502a36ba.svg": "/animalympics/static/media/donut-svgrepo-com.502a36ba.svg",
     "static/media/duck-nature-bird-target-svgrepo-com.10c3325c.svg": "/animalympics/static/media/duck-nature-bird-target-svgrepo-com.10c3325c.svg",
     "static/media/ducklose.7c32ac4f.wav": "/animalympics/static/media/ducklose.7c32ac4f.wav",
@@ -59,6 +64,7 @@
     "static/media/fly-swatter-svgrepo-com.0005a721.svg": "/animalympics/static/media/fly-swatter-svgrepo-com.0005a721.svg",
     "static/media/App.css": "/animalympics/static/media/frame-8v.22c6e525.svg",
     "static/media/fries-svgrepo-com.471be26b.svg": "/animalympics/static/media/fries-svgrepo-com.471be26b.svg",
+    "static/media/fuse-weapon-svgrepo-com.d02babe8.svg": "/animalympics/static/media/fuse-weapon-svgrepo-com.d02babe8.svg",
     "static/media/halloween-monster-animal-head-with-big-open-mouth-svgrepo-com.372c5c01.svg": "/animalympics/static/media/halloween-monster-animal-head-with-big-open-mouth-svgrepo-com.372c5c01.svg",
     "static/media/leaf-svgrepo-com.8bee0ce6.svg": "/animalympics/static/media/leaf-svgrepo-com.8bee0ce6.svg",
     "static/media/lion-facing-right-svgrepo-com.db03a83c.svg": "/animalympics/static/media/lion-facing-right-svgrepo-com.db03a83c.svg",
@@ -82,12 +88,13 @@
     "static/media/toucan-animals-svgrepo-com.dde4c4f9.svg": "/animalympics/static/media/toucan-animals-svgrepo-com.dde4c4f9.svg",
     "static/media/truck-lorry-svgrepo-com.d3349aff.svg": "/animalympics/static/media/truck-lorry-svgrepo-com.d3349aff.svg",
     "static/media/turtle-svgrepo-com.28d281f8.svg": "/animalympics/static/media/turtle-svgrepo-com.28d281f8.svg",
+    "static/media/ugh.6ca567be.wav": "/animalympics/static/media/ugh.6ca567be.wav",
     "static/media/wack.5b43c514.wav": "/animalympics/static/media/wack.5b43c514.wav"
   },
   "entrypoints": [
     "static/js/runtime-main.0b6c8d69.js",
     "static/js/2.53f9a5b7.chunk.js",
-    "static/css/main.f44a4c9b.chunk.css",
-    "static/js/main.f430349f.chunk.js"
+    "static/css/main.2f51882d.chunk.css",
+    "static/js/main.73189cd2.chunk.js"
   ]
 }
