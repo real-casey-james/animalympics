@@ -2,14 +2,13 @@ import React from 'react';
 
 import Duplicate from './Duplicate';
 
-export default function DuplicateContainer(props) {
+export default function DuplicateContainer({ handleWin, setPaused } ) {
     
     document.body.style.backgroundColor = 'darkolivegreen'
     
-    const {handleWin, handleClick, setPaused} = props
     return (
         <div className='duplicateContainer'>
-           <Duplicate setPaused={setPaused} handleWin={() => handleWin()} handleClick={() => handleClick()}/> 
+           <Duplicate setPaused={setPaused} handleWin={() => handleWin()} /> 
         </div>
     );
 }

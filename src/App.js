@@ -5,17 +5,18 @@ import Score from './components/Score'
 import Timer from './components/Timer'
 import Start from './components/Start'
 import FeedMe from './components/FeedMe'
+import Birds from './components/Birds';
 import WackMole from './components/WackMole'
 import DuplicateContainer from './components/DuplicateContainer'
 import Fish from './components/Fish'
 import Race from './components/Race'
 import Letters from './components/Letters'
-import FoodFall2 from './components/FoodFall2';
+import FoodFall from './components/FoodFall';
 import ClickLots from './components/ClickLots'
 import SwatFlies from './components/SwatFlies';
 import End from './components/End'
 
-import Birds from './components/Birds';
+import Scroll from './components/Scroll';
 
 import useSound from 'use-sound'
 import next from './sounds/342749__rhodesmas__notification-01.wav'
@@ -39,13 +40,14 @@ export default function App () {
         <FeedMe paused={paused} setPaused={setPaused} handleWin={() => handleWin()} />,
         <Birds setPaused={setPaused} handleWin={() => handleWin()} />,
         <Fish setPaused={setPaused} handleWin={() => handleWin()}/>,
-        <WackMole setPaused={setPaused} handleClick={() => handleWin()}  losePoint={losePoint} />,
-        <FoodFall2 handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
-        <SwatFlies setPaused={setPaused} handleWin={() => handleWin()} losePoint={losePoint}/>,
+        <WackMole setPaused={setPaused} handleClick={() => handleWin()} losePoint={losePoint} />,
+        <FoodFall handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
+        <SwatFlies setPaused={setPaused} handleWin={() => handleWin()} losePoint={losePoint} />,
         <Letters handleWin={() => handleWin()} losePoint={losePoint} setPaused={setPaused} />,
         <ClickLots setPaused={setPaused} handleWin={() => handleWin()} losePoint={losePoint} />,
-        <DuplicateContainer setPaused={setPaused} handleWin={() => handleWin()} handleClick={() => handleClick()} />,
-        <Race setPaused={setPaused} handleClick={() => handleClick()} handleWin={() => handleWin()} />,
+        <DuplicateContainer setPaused={setPaused} handleWin={() => handleWin()} />,
+        <Race setPaused={setPaused} handleWin={() => handleWin()} />,
+        <Scroll setPaused={setPaused} handleWin={() => handleWin()} losePoint={losePoint} />,
         <End score={finalScore} setPaused={setPaused} resetScore={resetScore} setShowTimer={setShowTimer} />
     ]
     
@@ -65,12 +67,6 @@ export default function App () {
             play()
         }
         setPaused(true)
-    }
-
-    function handleClick () {
-        handleLose()
-        setMove(true)
-        setWin(true)
     }
 
     function resetScore () {

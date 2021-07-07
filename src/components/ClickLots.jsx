@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
+
 import useSound from 'use-sound';
 import squeek from '../sounds/squeek.wav'
 import win from '../sounds/99636__tomlija__small-crowd-yelling-yeah.wav'
 import crashSound from '../sounds/crash.wav'
+
 import turtle from '../images/turtle-svgrepo-com.svg'
 import click from '../images/click-svgrepo-com.svg'
-
 import ambulance from '../images/ambulance-svgrepo-com.svg'
 import bicycle from '../images/bicycle-bike-svgrepo-com.svg'
 import bus from '../images/bus-front-view-svgrepo-com.svg'
 import cab from '../images/cab-svgrepo-com.svg'
 import car from '../images/car-svgrepo-com.svg'
 import truck from '../images/truck-lorry-svgrepo-com.svg'
-
 
 let showMouse = true
 

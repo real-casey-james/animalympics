@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 .start {
   height: 90vh;
   display: flex;
@@ -212,6 +216,7 @@
 .duplicateContainer {
   height: 90vh;
   width: 100vw;
+  user-select: none;
 }
 
 .end h2 {
@@ -256,17 +261,20 @@
   font-size: 50px;
   font-family: 'Amatic SC', cursive;
   margin-right: 10px;
+  user-select: none;
 }
 
 .time {
   font-size: 50px;
   font-family: 'Amatic SC', cursive;
   margin-left: 10px;
+  user-select: none;
 }
 
 .title {
   font-size: 60px;
   font-family: 'Amatic SC', cursive;
+  user-select: none;
 }
 
 .topBar {
@@ -619,4 +627,61 @@
 @keyframes clouds {
   0% {left: 100vw}
   100% {left: -35vw}
+}
+
+.scrollContainer {
+  width: 100vw;
+  height: 90vh;
+  cursor: none;
+}
+
+.scrollAnimal {
+  height: 150px;
+  position: fixed;
+}
+
+.arrow {
+  width: 100px;
+  position: fixed;
+  transform: rotate(135deg);
+}
+
+.axe {
+  width: 100px;
+  position: fixed;
+  animation: axespin 1s infinite reverse linear;
+}
+
+.bomb {
+  width: 100px;
+  position: fixed;
+  animation: axespin 1s infinite reverse linear;
+}
+
+@keyframes axespin {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(360deg)}
+}
+
+.exampleScrollContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 200px;
+  margin-top: 200px;
+  width: 100%;
+}
+
+.exampleMouse {
+  opacity: 0.3;
+  position: absolute;
+  left: 20vw;
+  top: 30vh;
+  animation: mousePulse 2s infinite;
+}
+
+@keyframes mousePulse {
+  0% {height: 300px}
+  50% {height: 350px}
+  100% {height: 300px}
 }
