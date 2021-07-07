@@ -75,6 +75,8 @@ function ClickLots ({ setPaused, handleWin, losePoint }) {
     }
     return (
         <div onClick={() => handleClick()} className='clickWrapper' >
+            {showMouse && <p className='instructionText'>click lots. don't get hit by traffic</p>}
+
             <img className='turtle' src={turtle} alt="" style={{left: `${positionX}vw`}} />
             <div className='finishLine'></div>
             {showMouse && <img className='clickLots' alt='click' src={click} /> }

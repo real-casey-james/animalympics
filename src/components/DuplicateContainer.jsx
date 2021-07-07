@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState }  from 'react';
 
 import Duplicate from './Duplicate';
 
+let showInstructions = true
+
 export default function DuplicateContainer({ handleWin, setPaused } ) {
+    const [showInstr, setShowInstr] = useState(true)
+    document.body.style.backgroundColor = '#ace698'
     
-    document.body.style.backgroundColor = 'darkolivegreen'
-    
+    function handleClick () {
+        setShowInstr(false)
+    }
     return (
-        <div className='duplicateContainer'>
+        <div className='duplicateContainer' onClick={() => handleClick()}>
+            {showInstr && <p className='instructionText'>click on bugs</p>}
            <Duplicate setPaused={setPaused} handleWin={() => handleWin()} /> 
         </div>
     );

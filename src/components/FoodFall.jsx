@@ -174,8 +174,10 @@ function FoodFall({ handleWin, losePoint, setPaused }) {
     }
     
     return (
+        <>
+           {showInst && <p className='instructionText'>catch food. don't catch fire. click to start</p>}
+
         <div className='foodWrapper' onMouseMove={() => handleMove()} onClick={() => startGame()} >
-           
            <img className='plate' src={plate} alt="plate" style={{left: positionX}}/> 
 
            <img src={food} alt='food' className='food2' style={{left: `${spawnPosition}vw`, top: `${foodY}vh`, transform: `scale(${foodScale}, ${foodScale})` }} />
@@ -201,6 +203,7 @@ function FoodFall({ handleWin, losePoint, setPaused }) {
             </>}
 
         </div>
+        </>
     );
 }
 

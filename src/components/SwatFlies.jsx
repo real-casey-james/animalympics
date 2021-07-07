@@ -52,6 +52,8 @@ function SwatFlies({ setPaused, handleWin, losePoint }) {
 
     return (
         <div draggable='false' className='swatContainer' onMouseMove={() => handleMouseMove()} onMouseDown={() => handleSwatDown()} onMouseUp={() => handleSwatUp()}>
+            {showMouse && <p className='instructionText'>swat flies. don't swat butterflies. click to swat</p>}
+
             <img draggable='false' className='swat' src={swat} style={{left: positionX, top: positionY, transform: `skewY(${swatSkew}deg)`}}  alt="swat" />
 
            {insects}

@@ -5,6 +5,8 @@ import useSound from 'use-sound'
 import duckWin from '../sounds/duckwin.wav'
 import duckLose from '../sounds/ducklose.wav'
 
+let showInst = true
+ 
 function Letters({ losePoint, handleWin, setPaused }) {
     document.body.style.backgroundColor = '#4db8ff'
 
@@ -18,6 +20,7 @@ function Letters({ losePoint, handleWin, setPaused }) {
 
     function handleKeypress (event) {
         setPaused(false)
+        showInst = false
         if (event.key === duckLetter) {
             win()
             setPositionX(Math.floor(80 * Math.random()))
@@ -32,7 +35,9 @@ function Letters({ losePoint, handleWin, setPaused }) {
 
     return (
         <div>
+
             <input onKeyPress={(evt) => handleKeypress(evt)} className='hiddenInput' tabIndex="1" autoFocus />
+            {showInst && <p className='instructionText'>press the key. don't press any other key</p>}
             <div style={{left: `${positionX}vw`, top: `${positionY}vh`}} className='letterContainer' >
                 <img className='duck' src={duck} alt="duck" /> 
                 <p className='letter'>{duckLetter}</p>  

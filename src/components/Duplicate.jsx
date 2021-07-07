@@ -6,7 +6,6 @@ import splat from '../sounds/446115__justinvoke__wet-splat.wav'
 import beetle from '../images/beetle-svgrepo-com.svg'
 
 export default function Duplicate ({ setPaused, handleWin }) {
-    document.body.style.backgroundColor = '#ace698'
     const [duplicate, setDuplicate] = useState('')
     const size = useWindowSize();
 

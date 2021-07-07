@@ -57,8 +57,8 @@ export default function FeedMe ({ handleWin, setPaused }) {
         if (grabbed === true) {
             setPositionX(x-100)
             setPositionY(y-100)
-            showMouse = false
-            localPause = false
+            // showMouse = false
+            // localPause = false
             setPaused(false)
         }
     }
@@ -75,6 +75,8 @@ export default function FeedMe ({ handleWin, setPaused }) {
     function grabbedIt () { grabbed = true }
 
     function onConsumption () {
+        showMouse = false
+        localPause = false
         play()
         handleWin()
         animalIndex++
@@ -93,7 +95,10 @@ export default function FeedMe ({ handleWin, setPaused }) {
         <div onMouseMove={() => handleDrag()}className='animalContainer'>
             <img  alt='animal' draggable='false' onMouseOver={() => grabbedIt()} style={{left: positionX, top: positionY, transform: `scaleX(${direction})`}} className='animal' src={animal} />
             <img  alt='monster' className='monster' src={monster} />
-            {showMouse && <img  alt='mouse' className='mouseIcon' src={mouseIcon}/>}
+            {showMouse && <>
+            <img alt='mouse' className='mouseIcon' src={mouseIcon}/>
+            <p className='instructionText'>move animals to monster with mouse cursor</p>
+            </>}
         </div>
     );
 }

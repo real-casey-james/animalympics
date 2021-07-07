@@ -120,7 +120,8 @@ export default function Fish ({ handleWin, setPaused }) {
         }
     }, [fishPositionX, fishPositionY])
 
-    return (
+    return (<>
+            {showControls && <p className='instructionText'>move fish to chips with arrow keys</p>}
         <div onKeyDown={keyHandler} id='fishy' className='fishContainer'>
             <input className='hiddenInput' tabIndex="1" autoFocus />
             <img alt='fish' className='fish' style={{left: `${fishPositionX}vw`, top: `${fishPositionY}vh`, transform: `scaleX(${fishDirection})`}} src={fish} />
@@ -128,7 +129,7 @@ export default function Fish ({ handleWin, setPaused }) {
             {showControls && <img alt='keys' className='keys' src={keys}/>}
             <img className='seaweed' src={seaweed} alt="" />
             <img className='seaweed2' src={seaweed} alt="" />
-        </div>
+        </div></>
     );
 }
 

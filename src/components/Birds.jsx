@@ -83,6 +83,7 @@ export default function Birds({ setPaused, handleWin }) {
             <img className='cloud cloud1' src={cloud1} alt="" />
             <img className='cloud cloud2' src={cloud2} alt="" />
             <img className='cloud cloud3' src={cloud3} alt="" />
+            {localPause && <p className='instructionText'>click on the birds</p>}
         </div>
     );
 }

@@ -83,6 +83,7 @@ export default function WackMole ({ setPaused, handleClick, losePoint }) {
     
     return (
         <>
+        {showMouse && <p className='instructionText'>wack the mole. don't wack the ostrich</p>}
         <div className='moleContainer' onMouseMove={() => handleMouseMove()} onMouseDown={() => handleBatDown()} onMouseUp={() => handleBatUp()}>
             <img alt='mole' draggable='false' src={mole} className={animalClass} style={{left: `${positionX}vw`, top: `${positionY}vh`}} onClick={() => handleHit()} />
             

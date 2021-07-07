@@ -107,11 +107,17 @@ function Scroll({ setPaused, handleWin, losePoint}) {
 
     function handleClick () {
         localPause = false
-        setPaused(false)
+        setTimeout(() => {
+            setPaused(false)
+        }, 1500);
+        setTimeout(() => {
+            localPause = true
+        }, 8500);
     }
     
     return (
         <div onWheel={(e) => handleScroll(e)} onClick={() => handleClick()} className='scrollContainer'>
+            {localPause && <p className='instructionText'>scroll wheel or track pad moves animal. avoid everything. click to start</p>}
             <img className='scrollAnimal' style={{top: `${positionY}vh`}} src={animal} alt="" />
             <img className='arrow' style={{right: `${arrowPositionX}vw`, top: `${arrowPositionY}vh` }} src={arrow} alt="" />
             <img className='axe' style={{right: `${axePositionX}vw`, top: `${axePositionY}vh` }} src={axe} alt="" />
