@@ -698,13 +698,13 @@ body {
 }
 
 .mapSafe {
-  background-color: green;
+  /* background-color: green; */
   height: 10vh;
   width: 10vw;
 }
 
 .mapNotSafe {
-  background-color: red;
+  /* background-color: red; */
   height: 10vh;
   width: 10vw;
 }
@@ -713,8 +713,24 @@ body {
   width: 9vw;
 }
 
-.mouse {
+.frog {
+  position: relative;
+  width: 10vw;
+  /* bottom: 40vh;
+  left: 20vw; */
+}
+
+.lillypad {
+  width: 9vw;
+}
+
+.pond {
+  /* position: fixed; */
+  /* width: 100vw; */
+  /* height: 90vh; */
+}
+
+table {
   position: fixed;
-  height: 110px;
-  top: 50vh;
+  /* border: 3px solid red; */
 }

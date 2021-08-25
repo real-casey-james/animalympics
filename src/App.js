@@ -17,7 +17,7 @@ import SwatFlies from './components/SwatFlies'
 import Scroll from './components/Scroll'
 import End from './components/End'
 
-import Cheese from './components/Cheese'
+import Frog from './components/Frog'
 
 import useSound from 'use-sound'
 import next from './sounds/342749__rhodesmas__notification-01.wav'
@@ -82,7 +82,8 @@ export default function App () {
             <span className='title'>animalympics</span>
             <Score setWin={() => setWin()} win={win} setLose={() => setLose()} lose={lose} setFinalScore={setFinalScore} reset={reset} setReset={setReset}/>
         </div>
-        {component}
+        {/* {component} */}
+        <Frog />
         </>
     )
 }
