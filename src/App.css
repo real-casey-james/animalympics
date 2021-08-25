@@ -696,3 +696,25 @@ body {
   text-align: center;
   user-select: none;
 }
+
+.mapSafe {
+  background-color: green;
+  height: 10vh;
+  width: 10vw;
+}
+
+.mapNotSafe {
+  background-color: red;
+  height: 10vh;
+  width: 10vw;
+}
+
+.trap {
+  width: 9vw;
+}
+
+.mouse {
+  position: fixed;
+  height: 110px;
+  top: 50vh;
+}

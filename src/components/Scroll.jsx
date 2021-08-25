@@ -25,7 +25,25 @@ function Scroll({ setPaused, handleWin, losePoint}) {
     const [bombPositionX, setBombPositionX] = useState(-80)
     const [bombPositionY, setBombPositionY] = useState(60)
 
-    useEffect(() => {
+    // useEffect(() => { 
+    //     if (!localPause) {
+    //         let start = Date.now()
+    //         let localArrow = arrowPositionX
+    //         let frames = requestAnimationFrame(function arrowMove () {
+    //             console.log('firing')
+    //             if (arrowPositionX < 100) {
+    //                 setArrowPositionX(localArrow++)
+    //             } else {
+    //                 setArrowPositionX(-10)
+    //                 setArrowPositionY(Math.random() * 90)
+    //             }
+    //             let interval = Date.now() - start
+    //             requestAnimationFrame(arrowMove)
+    //         });
+    //         }
+    // }, []) 
+
+    useEffect(() => { // set local arrow position? is requestanimationframe doing anything?
         if (!localPause) {
         const int = requestAnimationFrame(() => {
             if (arrowPositionX < 100) {

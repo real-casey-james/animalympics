@@ -7,8 +7,8 @@ import birdhit from '../sounds/squawk.wav'
 
 export default function Bird({ randomYindex, handleWin }) {
 
-    const { x, y } = mouse();
-    const size = useWindowSize();
+    const { x, y } = mouse()
+    const size = useWindowSize()
 
     const [positionX, setPositionX] = useState('')
     const [positionY, setPositionY] = useState(randomYindex)

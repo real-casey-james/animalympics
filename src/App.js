@@ -1,22 +1,23 @@
-import { useState } from 'react';
-import './App.css';
+import { useState } from 'react'
+import './App.css'
 
 import Score from './components/Score'
 import Timer from './components/Timer'
 import Start from './components/Start'
 import FeedMe from './components/FeedMe'
-import Birds from './components/Birds';
+import Birds from './components/Birds'
 import WackMole from './components/WackMole'
 import DuplicateContainer from './components/DuplicateContainer'
 import Fish from './components/Fish'
 import Race from './components/Race'
 import Letters from './components/Letters'
-import FoodFall from './components/FoodFall';
+import FoodFall from './components/FoodFall'
 import ClickLots from './components/ClickLots'
-import SwatFlies from './components/SwatFlies';
+import SwatFlies from './components/SwatFlies'
+import Scroll from './components/Scroll'
 import End from './components/End'
 
-import Scroll from './components/Scroll';
+import Cheese from './components/Cheese'
 
 import useSound from 'use-sound'
 import next from './sounds/342749__rhodesmas__notification-01.wav'

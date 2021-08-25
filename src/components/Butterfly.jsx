@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import mouse from '../scripts/useMousePosition.js'
 import useWindowSize from '../scripts/useWindowSize'
-import useSound from 'use-sound';
+import useSound from 'use-sound'
 import swatSound from '../sounds/349204__natty23__light-squash.wav'
 import butterfly from '../images/butterfly-svgrepo-com.svg'
 import splat from '../images/nmOO979-blood-vector.svg'
 
 function Butterfly({ losePoint, top, left }) {
-    const { x, y } = mouse();
-    const size = useWindowSize();
+    const { x, y } = mouse()
+    const size = useWindowSize()
     const [flyState, setFlyState] = useState(butterfly)
     const [insectClass, setInsectClass] = useState('fly')
     const [positionX, setPositionX] = useState(left)
